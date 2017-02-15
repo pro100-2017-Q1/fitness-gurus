@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Pro100\FitnessTracker\FitnessTracker\obj\Debug\
+D:\Pro100\FitnessTracker\fitness-gurus\FitnessTracker\obj\Debug\
 FitnessTracker
 none
 false
 DEBUG;TRACE
-D:\Pro100\FitnessTracker\FitnessTracker\App.xaml
+D:\Pro100\FitnessTracker\fitness-gurus\FitnessTracker\App.xaml
 11151548125
 
 9912547015
 13738642453
 MainWindow.xaml;
 
-True
+False
 
