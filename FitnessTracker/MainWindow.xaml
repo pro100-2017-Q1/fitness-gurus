@@ -5,8 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FitnessTracker"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="600" Width="1000">
     <Grid>
-        
+        <StackPanel x:Name="ActivityPanel"
+                    Orientation="Vertical"
+                      Width="750"
+                      Height="400">
+            <StackPanel Orientation="Horizontal">
+                <ComboBox Text="Filter By" Width="100"/>
+                <Label Width="600" HorizontalContentAlignment="Center">My Activities</Label>
+                <Button>Share</Button>
+            </StackPanel>
+            <DataGrid x:Name="Activities" 
+                      AutoGenerateColumns="False">
+                      <!-- items source bind to list of activities-->
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Date" Width="200">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="HorizontalAlignment" Value="Center" />
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Activity"/>
+                    <DataGridTextColumn Header="Calories"/>
+                    <DataGridTextColumn Header="Distance"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
     </Grid>
 </Window>
