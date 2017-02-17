@@ -6,7 +6,12 @@
         xmlns:local="clr-namespace:FitnessTracker"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
+    <Grid x:Name="SplashPageGrid">
+        <Label x:Name="emailLabel" Content="Email: " HorizontalAlignment="Left" Margin="140,94,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.479,0" Height="23" Width="45"/>
+        <TextBox x:Name="tbxEmail" HorizontalAlignment="Left" Height="23" Margin="255,94,0,0" TextWrapping="Wrap" Text="{Binding Email}" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="passwordLabel" Content="Password: " HorizontalAlignment="Left" Margin="140,140,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.479,0" Height="23" Width="65"/>
+        <TextBox x:Name="tbxPassword" HorizontalAlignment="Left" Height="23" Margin="255,140,0,0" TextWrapping="Wrap" Text="{Binding Password}" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="loginButton" Content="Login" HorizontalAlignment="Left" Margin="165,196,0,0" VerticalAlignment="Top" Width="75" Click="buttonChanged_Click"/>
+        <Button x:Name="forgottenPasswordLabel" Content="Forgotten Password?" Margin="295,193,88.4,90.8"/>
     </Grid>
 </Window>
