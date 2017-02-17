@@ -1,0 +1,2 @@
+D:\Pro100\FitnessTracker\FitnessTracker\bin\Debug\FitnessTracker.exe.config
+C:\Users\Jochi\Desktop\fitness-gurus-Josh-UI\FitnessTracker\bin\Debug\FitnessTracker.exe.config

@@ -1,0 +1,26 @@
+﻿<Window x:Class="FitnessTracker.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FitnessTracker"
+        mc:Ignorable="d"
+        Title="Account Page" Height="400" Width="700"
+        Background="#2FC191">
+    <Grid>
+
+        <Label x:Name="FNamelbl" Content="Name" HorizontalAlignment="Left" Margin="254,34,0,0" VerticalAlignment="Top" Height="24"/>
+        <Label x:Name="agelbl" Content="Age" HorizontalAlignment="Left" Margin="249,124,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="agetbx" HorizontalAlignment="Left" Height="23" Margin="285,127,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="savebtn" Content="Save Profile" HorizontalAlignment="Left" Margin="539,100,0,0" VerticalAlignment="Top" Width="75" Click="savebtn_Click"/>
+        <Label x:Name="genderlbl" Content="Gender" HorizontalAlignment="Left" Margin="231,223,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="gendertbx" HorizontalAlignment="Left" Height="23" Margin="285,223,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="weightlbl" Content="Weight" HorizontalAlignment="Left" Margin="231,171,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="weighttbx" HorizontalAlignment="Left" Height="23" Margin="285,174,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="heightlbl" Content="Height" HorizontalAlignment="Left" Margin="234,272,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="heighttbx" HorizontalAlignment="Left" Height="23" Margin="285,275,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Canvas x:Name="Profile_Picture" HorizontalAlignment="Left" Height="150" Margin="32,34,0,0" VerticalAlignment="Top" Width="167" Background="White"/>
+        <TextBox x:Name="nametbx" HorizontalAlignment="Left" Height="23" Margin="254,58,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="171"/>
+
+    </Grid>
+</Window>
