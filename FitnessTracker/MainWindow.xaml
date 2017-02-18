@@ -26,9 +26,9 @@
                       <!-- items source bind to list of activities-->
                 <DataGrid.ColumnHeaderStyle>
                     <Style TargetType="DataGridColumnHeader">
-                                <Setter Property="HorizontalContentAlignment"
-                                         Value="Center" />
-                        <Setter Property="Background" Value="#2FC191"/>
+                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        <Setter Property="Background" Value="#2FC191" />
+                        <Setter Property="Foreground" Value="White" />
                     </Style>
                 </DataGrid.ColumnHeaderStyle>
 
