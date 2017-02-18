@@ -49,7 +49,7 @@ namespace FitnessTracker {
         #line hidden
         
         
-        #line 19 "..\..\MainWindow.xaml"
+        #line 23 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGrid Activities;
         

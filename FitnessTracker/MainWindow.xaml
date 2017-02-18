@@ -10,50 +10,33 @@
         <StackPanel x:Name="ActivityPanel"
                     Orientation="Vertical"
                       Width="800"
-                      Height="400">
+                      Height="400"
+                      Background="#666666">
             <StackPanel Orientation="Horizontal">
-                <ComboBox Text="Filter By" Width="100"/>
-                <Label Width="666" HorizontalContentAlignment="Center">My Activities</Label>
-                <Button>Share</Button>
+                <ComboBox Width="100" Height="25"></ComboBox>
+                <Label Width="600" 
+                       HorizontalContentAlignment="Center"
+                       Foreground="White"
+                       FontSize="24">My Activities</Label>
+                <Button Width="100">Share</Button>
             </StackPanel>
             <DataGrid x:Name="Activities"
+                      GridLinesVisibility="All"
                       AutoGenerateColumns="False">
                       <!-- items source bind to list of activities-->
+                <DataGrid.ColumnHeaderStyle>
+                    <Style TargetType="DataGridColumnHeader">
+                                <Setter Property="HorizontalContentAlignment"
+                                         Value="Center" />
+                        <Setter Property="Background" Value="#2FC191"/>
+                    </Style>
+                </DataGrid.ColumnHeaderStyle>
 
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Date" Width="200">
-                        <DataGridTextColumn.HeaderStyle>
-                            <Style TargetType="DataGridColumnHeader">
-                                <Setter Property="HorizontalContentAlignment"
-                                         Value="Center" />
-                            </Style>
-                        </DataGridTextColumn.HeaderStyle>
-                    </DataGridTextColumn>
-                    <DataGridTextColumn Header="Activity" Width="200">
-                        <DataGridTextColumn.HeaderStyle>
-                            <Style TargetType="DataGridColumnHeader">
-                                <Setter Property="HorizontalContentAlignment"
-                                         Value="Center" />
-                            </Style>
-                        </DataGridTextColumn.HeaderStyle>
-                    </DataGridTextColumn>
-                    <DataGridTextColumn Header="Calories" Width="200">
-                        <DataGridTextColumn.HeaderStyle>
-                            <Style TargetType="DataGridColumnHeader">
-                                <Setter Property="HorizontalContentAlignment"
-                                         Value="Center" />
-                            </Style>
-                        </DataGridTextColumn.HeaderStyle>
-                    </DataGridTextColumn>
-                    <DataGridTextColumn Header="Distance" Width="200">
-                        <DataGridTextColumn.HeaderStyle>
-                            <Style TargetType="DataGridColumnHeader">
-                                <Setter Property="HorizontalContentAlignment"
-                                         Value="Center" />
-                            </Style>
-                        </DataGridTextColumn.HeaderStyle>
-                    </DataGridTextColumn>
-                    
+                    <DataGridTextColumn Header="Date"     Width="200" Binding="{Binding}" />
+                    <DataGridTextColumn Header="Activity" Width="200" Binding="{Binding}" />
+                    <DataGridTextColumn Header="Calories" Width="200" Binding="{Binding}" />
+                    <DataGridTextColumn Header="Distance" Width="200" Binding="{Binding}" />
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>
