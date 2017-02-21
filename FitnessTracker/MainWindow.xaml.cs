@@ -23,6 +23,10 @@ namespace FitnessTracker
         public MainWindow()
         {
             InitializeComponent();
+
+
+
+
         }
     }
 }
