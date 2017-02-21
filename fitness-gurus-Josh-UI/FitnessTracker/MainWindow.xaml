@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:FitnessTracker"
         mc:Ignorable="d"
         Title="Account Page" Height="400" Width="700"
-        Background="#2FC191">
+        Background="#2FC191"
+        Name="Profile">
     <Grid>
 
         <Label x:Name="FNamelbl" Content="Name" HorizontalAlignment="Left" Margin="254,34,0,0" VerticalAlignment="Top" Height="24"/>
