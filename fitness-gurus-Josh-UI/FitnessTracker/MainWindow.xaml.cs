@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace FitnessTracker
 {
@@ -21,6 +22,7 @@ namespace FitnessTracker
     /// </summary>
     public partial class MainWindow : Window
     {
+        System.IO.StreamWriter file = new System.IO.StreamWriter("profile.txt");
         public MainWindow()
         {
             InitializeComponent();
@@ -71,7 +73,12 @@ namespace FitnessTracker
                         {
                             if (nameAccepted == true)
                             {
-                                Profile.Close();
+                                file.WriteLine(name);
+                                file.WriteLine(age);
+                                file.WriteLine(weighttbx.Text);
+                                file.WriteLine(heighttbx.Text);
+                                file.WriteLine(gendertbx.Text);
+                                file.Close();
                             }
                         }
                     }
