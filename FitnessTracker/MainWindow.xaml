@@ -5,8 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FitnessTracker"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+         Title="Simply Fit" Height="800" Width="1100">
     <Grid>
-        
+        <Grid Height="50" VerticalAlignment="Top" Background="#666666">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="230" />
+                <ColumnDefinition Width="300" />
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBox Grid.Row="0" Grid.Column="0" Height="20" Margin="10">Search</TextBox>
+            <Image Source="media/simplyFit.png"  Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Margin="146.8,0,94.2,-0.4"></Image>
+            <Button Grid.Row="0" Grid.Column="2" Height="40" Width="40" Margin="512,5,-305.6,4.6" Background="Transparent">
+                <Image Source="media/profile.png" Height="25" Width="25" ></Image>
+            </Button>
+        </Grid>
+        <Button x:Name="leftArrow" HorizontalAlignment="Left" Margin="28,279,0,0" VerticalAlignment="Top" Width="30" Height="30" Background="Transparent">
+            <Image Source="media/left.png" Height="25" Width="25" ></Image>
+        </Button>
+        <Button x:Name="rightArrow" HorizontalAlignment="Left" Margin="1038,279,0,0" VerticalAlignment="Top" Width="30" Height="30" Background="Transparent">
+            <Image Source="media/right.png" Height="25" Width="25" ></Image>
+        </Button>
+        <RadioButton x:Name="dot1" HorizontalAlignment="Left" Margin="538,741,0,0" VerticalAlignment="Top" IsChecked="True"/>
+        <RadioButton x:Name="dot2" HorizontalAlignment="Left" Margin="564,741,0,0" VerticalAlignment="Top" />
+
     </Grid>
 </Window>

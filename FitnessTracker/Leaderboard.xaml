@@ -1,0 +1,40 @@
+﻿ <Window x:Class="FitnessTracker.Leaderboard"
+         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+         xmlns:local="clr-namespace:FitnessTracker"
+         mc:Ignorable="d"
+         Title="Leaderboard" Height="500" Width="800">
+     <Grid>
+        <StackPanel x:Name="ActivityPanel"
+                    Orientation="Vertical"
+                      Background="#666666" >
+            <StackPanel Orientation="Horizontal">
+                <Label Width="800" 
+                       HorizontalContentAlignment="Center"
+                       Foreground="White"
+                       FontSize="24" Content="Leaderboard"/>
+
+            </StackPanel>
+            <Grid Height="430">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Column="0" Grid.Row="0" Background="White" Margin="10"></StackPanel>
+                <StackPanel Grid.Column="1" Grid.Row="0" Background="White" Margin="10"></StackPanel>
+                <StackPanel Grid.Column="0" Grid.Row="1" Background="White" Margin="10"></StackPanel>
+                <StackPanel Grid.Column="1" Grid.Row="1" Background="White" Margin="10"></StackPanel>
+                <StackPanel Grid.Column="2" Grid.RowSpan="2" Background="White" Margin="10"></StackPanel>
+            </Grid>
+        </StackPanel>
+    </Grid>
+ </Window>

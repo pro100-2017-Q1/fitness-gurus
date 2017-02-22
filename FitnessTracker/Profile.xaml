@@ -1,0 +1,75 @@
+﻿<Window x:Class="FitnessTracker.Profile"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FitnessTracker"
+        mc:Ignorable="d"
+        Title="Profile" Height="800" Width="1100">
+    <Grid Name="mainGrid">
+        <Grid Height="50" VerticalAlignment="Top" Background="#666666" Name="headerGrid" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="230" />
+                <ColumnDefinition Width="300" />
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBox Grid.Row="0" Grid.Column="0" Height="20" Margin="10">Search</TextBox>
+            <Image Source="media/simplyFit.png"  Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Margin="146.8,0,94.2,-0.4"></Image>
+            <Button Grid.Row="0" Grid.Column="2" Height="40" Width="40" Margin="512,5,-305.6,4.6" Background="Transparent">
+                <Image Source="media/profile.png" Height="25" Width="25" ></Image>
+            </Button>
+        </Grid>
+
+
+        <Grid  Name="screenGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="3"/>
+                <RowDefinition Height="325"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+
+            <Image Name="profilePic" Width="200" Margin="61,112,832.6,65.8" Source="media/profilePH.png"/>
+            <StackPanel Width="300" Height="200" Margin="292,110,501.6,48.4">
+                <Label Foreground="#666666" FontSize="40">John Doe</Label>
+                <TextBox Name="ageBox" FontSize="20" Foreground="#666666">28 Years Old</TextBox>
+                <TextBox Name="genderBox" FontSize="20" Foreground="#666666">Male</TextBox>
+                <TextBox Name="locationBox" FontSize="20" Foreground="#666666">Salt Lake City, UT</TextBox>
+            </StackPanel>
+
+            <StackPanel Width="300" Margin="667,110,126.6,50.4">
+                <Label FontSize="20" Foreground="#666666">About Me</Label>
+                <TextBox Height="136" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" Foreground="#666666">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt libero sit amet nulla suscipit egestas. Ut malesuada turpis ut euismod suscipit. Ut eget eros fermentum, tempor elit id, maximus ipsum. Donec magna ligula, fringilla ac dolor sit amet, gravida lobortis massa. Vestibulum pulvinar leo odio. Nulla eget tempor est. In tempus, massa eget pretium hendrerit, felis velit suscipit turpis, vitae hendrerit erat nisi at nibh.</TextBox>
+            </StackPanel>
+
+            <Image Source="media/userEdit.ico" Width="30" Height="30" Margin="1026,353,37.6,9.8"/>
+
+            <Border Grid.Row="1" Background="#666666"></Border>
+
+            <Label FontSize="40" Grid.Row="2" Foreground="#2FC191" Margin="10,17,733.6,217.8" Width="350">Today's Statistics</Label>
+            <StackPanel Orientation="Horizontal" Grid.Row="2" Height="100" Margin="0,147,-0.4,77.8">
+                <StackPanel Margin="100 0 0 0">
+                    <Label FontSize="20" Foreground="#666666" VerticalAlignment="Center">Weight</Label>
+                    <TextBox Width="100" Height="30" VerticalAlignment="Center" FontSize="20" Foreground="#666666">200</TextBox>
+                </StackPanel>
+                <StackPanel Margin="100 0 0 0">
+                    <Label FontSize="20" Foreground="#666666" VerticalAlignment="Center">Height</Label>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox Width="50" Height="30" VerticalAlignment="Center" FontSize="20" Foreground="#666666" Margin="5">5</TextBox>
+                        <TextBox Width="50" Height="30" VerticalAlignment="Center" FontSize="20" Foreground="#666666">4</TextBox>
+                    </StackPanel>
+                </StackPanel>
+                <Button Foreground="White" Background="#2FC191" FontSize="15" Width="200" Margin="60,30,0,40">Upload Activity File</Button>
+            </StackPanel>
+
+
+            <Calendar Grid.Row="2" Margin="811,103.4,94.6,37.8"/>
+
+            <Border Grid.Row="3" Background="#666666"></Border>
+        </Grid>
+
+    </Grid>
+</Window>

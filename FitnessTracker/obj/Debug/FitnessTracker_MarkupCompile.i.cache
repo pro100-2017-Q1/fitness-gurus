@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Pro100\FitnessTracker\FitnessTracker\obj\Debug\
+C:\Users\Dani Meyer\Documents\Quarter 6\Sprint 2\Software Projects\fitness-gurus\FitnessTracker\obj\Debug\
 FitnessTracker
 none
 false
 DEBUG;TRACE
-D:\Pro100\FitnessTracker\FitnessTracker\App.xaml
-11151548125
+C:\Users\Dani Meyer\Documents\Quarter 6\Sprint 2\Software Projects\fitness-gurus\FitnessTracker\App.xaml
+5841995097
 
-9912547015
+13-1569675719
 13738642453
-MainWindow.xaml;
+ActivityLog.xaml;Leaderboard.xaml;Login.xaml;MainWindow.xaml;Profile.xaml;
 
-True
+False
 
