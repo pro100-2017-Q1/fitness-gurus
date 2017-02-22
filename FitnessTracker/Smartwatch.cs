@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace ActivityGenerator
+namespace Smartwatch
 {
     public enum ActivityType
     {
@@ -58,7 +58,7 @@ namespace ActivityGenerator
                 var activity = activityInfo.Item1;
                 var distanceMoved = rand.Next(activityInfo.Item2, activityInfo.Item3);
 
-                activityData.Add($"{activity.Name},{distanceMoved},{activity.CaloriesLost(distanceMoved)},{distanceMoved}");
+                activityData.Add($"{activity.Name},{activity.CaloriesLost(distanceMoved)},{distanceMoved}");
             }
             File.WriteAllLines(filename, activityData);
         }
@@ -70,13 +70,27 @@ namespace ActivityGenerator
         {
             ActivityLogGenerator.GenerateActivityLog("fitness_data.csv", 120);
         }
+        
     }
 
     public class CSVConverter
     {
-        public List<CSVActivity> Activities = new List<CSVActivity>();
 
+        public List<CSVActivity> ConvertToList()
+        {
+            string rawData = GetStringFromFile("fitness_data.csv");
+            List<CSVActivity> Activities = new List<CSVActivity>();
 
+            return Activities;
+        }
+
+        private string GetStringFromFile(string filename)
+        {
+
+            StreamReader sr = new StreamReader(filename);
+            return sr.ReadToEnd();
+        
+        }
     }
     
     public class CSVActivity

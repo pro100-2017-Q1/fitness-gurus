@@ -18,7 +18,7 @@
                        HorizontalContentAlignment="Center"
                        Foreground="White"
                        FontSize="24">My Activities</Label>
-                <Button Width="100">Share</Button>
+                <Button Width="100" Click="Button_Click">Share</Button>
             </StackPanel>
             <DataGrid x:Name="Activities"
                       GridLinesVisibility="All"

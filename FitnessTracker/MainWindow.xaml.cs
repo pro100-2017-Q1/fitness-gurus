@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Smartwatch;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,7 +27,13 @@ namespace FitnessTracker
 
 
 
+        }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+            CSVConverter cc = new CSVConverter();
+            cc.ConvertToList();
         }
     }
 }
