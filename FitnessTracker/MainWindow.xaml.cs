@@ -24,5 +24,27 @@ namespace FitnessTracker
         {
             InitializeComponent();
         }
+        private void forgottenPasswordLabel_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void loginButtonChanged_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void tbxUsername_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            
+        }
+        private void tbxUsername_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox tbx = (TextBox)sender;
+            tbx.Text = string.Empty;
+            tbx.GotFocus -= tbxUsername_GotFocus;
+        }
+        private void tbxPassword_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
