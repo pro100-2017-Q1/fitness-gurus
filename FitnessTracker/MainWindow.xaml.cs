@@ -1,6 +1,7 @@
 ﻿using Smartwatch;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,11 +22,20 @@ namespace FitnessTracker
     /// </summary>
     public partial class MainWindow : Window
     {
+        ObservableCollection<CSVActivity> activityLog = new ObservableCollection<CSVActivity>
+        {
+            new CSVActivity("Walking", 150, 2),
+            new CSVActivity("Biking", 300, 3)
+        };
+        
+
         public MainWindow()
         {
             InitializeComponent();
+            
 
-
+            Activities.ItemsSource = activityLog;
+            
 
         }
 
@@ -33,7 +43,7 @@ namespace FitnessTracker
         {
 
             CSVConverter cc = new CSVConverter();
-            cc.ConvertToList();
+            activityLog = cc.ConvertToList();
         }
     }
 }

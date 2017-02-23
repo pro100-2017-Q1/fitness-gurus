@@ -17,13 +17,14 @@
                 <Label Width="600" 
                        HorizontalContentAlignment="Center"
                        Foreground="White"
-                       FontSize="24">My Activities</Label>
-                <Button Width="100" Click="Button_Click">Share</Button>
+                       FontSize="24" Height="39">My Activities</Label>
+                <Button Width="100" Click="Button_Click" Height="25">Share</Button>
             </StackPanel>
             <DataGrid x:Name="Activities"
                       GridLinesVisibility="All"
-                      AutoGenerateColumns="False">
-                      <!-- items source bind to list of activities-->
+                      AutoGenerateColumns="False"
+                      Height="340" 
+                      Margin="25,0,25,0">
                 <DataGrid.ColumnHeaderStyle>
                     <Style TargetType="DataGridColumnHeader">
                         <Setter Property="HorizontalContentAlignment" Value="Center" />
@@ -33,10 +34,10 @@
                 </DataGrid.ColumnHeaderStyle>
 
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Date"     Width="200" Binding="{Binding}" />
-                    <DataGridTextColumn Header="Activity" Width="200" Binding="{Binding}" />
-                    <DataGridTextColumn Header="Calories" Width="200" Binding="{Binding}" />
-                    <DataGridTextColumn Header="Distance" Width="200" Binding="{Binding}" />
+                    <DataGridTextColumn Header="Date"     Width="180" Binding="{Binding Date}" />
+                    <DataGridTextColumn Header="Activity" Width="180" Binding="{Binding Type}" />
+                    <DataGridTextColumn Header="Calories" Width="180" Binding="{Binding Calories}" />
+                    <DataGridTextColumn Header="Distance" Width="180" Binding="{Binding Distance}" />
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>

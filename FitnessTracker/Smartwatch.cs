@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace Smartwatch
 {
@@ -76,20 +78,44 @@ namespace Smartwatch
     public class CSVConverter
     {
 
-        public List<CSVActivity> ConvertToList()
+        public ObservableCollection<CSVActivity> ConvertToList()
         {
-            string rawData = GetStringFromFile("fitness_data.csv");
-            List<CSVActivity> Activities = new List<CSVActivity>();
+            ObservableCollection<CSVActivity> Activities = new ObservableCollection<CSVActivity>();
+
+            Regex rr = new Regex(@"(w\+),(d+),(d+)");
+
+            string placeholder = GetStringFromFile("fitness_data.csv").Result;
+            while(placeholder != null)
+            {
+                rr.Match(placeholder);
+                Activities.Add(new CSVActivity("aaaa", 2, 2));
+                placeholder = GetStringFromFile("fitness_data.csv").Result;
+            }
+
+
+
+
+
 
             return Activities;
         }
 
-        private string GetStringFromFile(string filename)
+        private async System.Threading.Tasks.Task<string> GetStringFromFile(string filename)
         {
+            try
+            {
+                using(StreamReader sr = new StreamReader(filename))
+                {
+                    return await sr.ReadLineAsync();
+                }
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("Something Broke " +e.Message);
+            }
+            return null;
+            
 
-            StreamReader sr = new StreamReader(filename);
-            return sr.ReadToEnd();
-        
         }
     }
     
