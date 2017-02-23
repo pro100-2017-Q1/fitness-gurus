@@ -22,6 +22,7 @@
         <TextBox x:Name="heighttbx" HorizontalAlignment="Left" Height="23" Margin="285,275,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <Canvas x:Name="Profile_Picture" HorizontalAlignment="Left" Height="150" Margin="32,34,0,0" VerticalAlignment="Top" Width="167" Background="White"/>
         <TextBox x:Name="nametbx" HorizontalAlignment="Left" Height="23" Margin="254,58,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="171"/>
+        <Button x:Name="loadbtn" Content="Load" HorizontalAlignment="Left" Margin="539,171,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
 </Window>

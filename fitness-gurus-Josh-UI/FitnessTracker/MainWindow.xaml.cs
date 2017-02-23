@@ -17,12 +17,9 @@ using System.IO;
 
 namespace FitnessTracker
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
-        System.IO.StreamWriter file = new System.IO.StreamWriter("profile.txt");
+
         public MainWindow()
         {
             InitializeComponent();
@@ -30,6 +27,7 @@ namespace FitnessTracker
 
         private void savebtn_Click(object sender, RoutedEventArgs e)
         {
+            System.IO.StreamWriter file = new System.IO.StreamWriter(nametbx.Text + ".txt");
             Boolean ageAccepted = false;
             string ageRegex = "([0-9]+)";
             Regex ageR = new Regex(ageRegex);
@@ -84,6 +82,11 @@ namespace FitnessTracker
                     }
                 }
             }
+        }
+
+        private void loadbtn_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }
