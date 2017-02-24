@@ -22,6 +22,7 @@ namespace FitnessTracker
     /// </summary>
     public partial class MainWindow : Window
     {
+
         ObservableCollection<CSVActivity> activityLog = new ObservableCollection<CSVActivity>
         {
             new CSVActivity("Walking", 150, 2),
@@ -32,10 +33,11 @@ namespace FitnessTracker
         public MainWindow()
         {
             InitializeComponent();
-            
+
+            SmartWatch sw = new SmartWatch();
 
             Activities.ItemsSource = activityLog;
-            
+
 
         }
 
@@ -43,7 +45,7 @@ namespace FitnessTracker
         {
 
             CSVConverter cc = new CSVConverter();
-            activityLog = cc.ConvertToList();
+            activityLog.Add(cc.ConvertToList());
         }
     }
 }

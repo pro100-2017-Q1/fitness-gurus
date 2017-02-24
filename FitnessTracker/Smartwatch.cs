@@ -78,33 +78,30 @@ namespace Smartwatch
     public class CSVConverter
     {
 
-        public ObservableCollection<CSVActivity> ConvertToList()
+        public CSVActivity ConvertToList()
         {
             ObservableCollection<CSVActivity> Activities = new ObservableCollection<CSVActivity>();
 
             Regex rr = new Regex(@"(w\+),(d+),(d+)");
 
-            string placeholder = GetStringFromFile("fitness_data.csv").Result;
-            while(placeholder != null)
-            {
-                rr.Match(placeholder);
-                Activities.Add(new CSVActivity("aaaa", 2, 2));
-                placeholder = GetStringFromFile("fitness_data.csv").Result;
-            }
+            string placeholder = GetStringFromFile().Result;
+            //while(placeholder.Length < 0)
+            //{
+                //rr.Match(placeholder);
+                //Activities.Add(new CSVActivity(placeholder, 2, 2));
+            //    placeholder = GetStringFromFile("fitness_data.csv").Result;
+            //}
 
 
-
-
-
-
-            return Activities;
+            
+            return new CSVActivity(placeholder, 2, 2);
         }
 
-        private async System.Threading.Tasks.Task<string> GetStringFromFile(string filename)
+        private async System.Threading.Tasks.Task<string> GetStringFromFile()
         {
             try
             {
-                using(StreamReader sr = new StreamReader(filename))
+                using(StreamReader sr = new StreamReader("D:\\Pro100\\FitnessTracker\\fitness-gurus\\FitnessTracker\\bin\\Debug\\fitness_data.csv"))
                 {
                     return await sr.ReadLineAsync();
                 }
