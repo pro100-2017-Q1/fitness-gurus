@@ -17,7 +17,7 @@
             <ColumnDefinition Width="0*"/>
             <ColumnDefinition Width="131*"/>
         </Grid.ColumnDefinitions>
-        <Label x:Name="Login" Content="Login" Margin="99.4,98,117,190.8" Foreground="White" Grid.Column="2" 
+        <Label x:Name="LoginLabel" Content="Login" Margin="99.4,98,117,190.8" Foreground="White" Grid.Column="2" 
                Grid.RowSpan="3"/>
         <TextBox x:Name="tbxUsername" HorizontalAlignment="Left" Height="27" Margin="4.4,20.4,0,0"
                  TextWrapping="Wrap" Text="Username" GotFocus="tbxUsername_GotFocus" VerticalAlignment="Top"
