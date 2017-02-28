@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -30,5 +31,80 @@ namespace FitnessTracker
             home.Show();
             this.Close();
         }
+        private void saveButton_Click_1(object sender, RoutedEventArgs e)
+        {
+            System.IO.StreamWriter file = new System.IO.StreamWriter(nameBox.Text + ".txt");
+            Boolean weightAccepted = false;
+            Boolean HeightAccepted = false;
+            if (weightBox != null)
+            {
+                weightAccepted = true;
+            }
+            if (feetBox != null && inchBox != null)
+            {
+                HeightAccepted = true;
+            }
+            if (HeightAccepted == true)
+            {
+                if (weightAccepted == true)
+                {
+                    file.WriteLine(weightBox.Text);
+                    file.WriteLine(feetBox.Text + "''" + inchBox.Text + "'");
+                    file.Close();
+                }
+            }
+
+        }
+
+        private void saveButton2_Click(object sender, RoutedEventArgs e)
+        {
+            System.IO.StreamWriter file = new System.IO.StreamWriter(nameBox.Text + ".txt");
+            Boolean ageAccepted = false;
+            string ageRegex = "([0-9]+)";
+            Regex ageR = new Regex(ageRegex);
+            string age = ageBox.Text;
+            Boolean nameAccepted = false;
+            string nameRegex = "([A-Za-z ]+)";
+            Regex nameR = new Regex(nameRegex);
+            Boolean genderAccepted = false;
+            string name = nameBox.Text;
+            Match m = nameR.Match(name);
+            Match a = ageR.Match(age);
+            Boolean desc = false;
+            if (m.Success)
+            {
+                nameAccepted = true;
+            }
+            if (a.Success)
+            {
+                ageAccepted = true;
+            }
+            if ((genderBox.Text == "Male" || genderBox.Text == "Female"))
+            {
+                genderAccepted = true;
+            }
+            if (descBox != null)
+            {
+                desc = true;
+            }
+            if (genderAccepted == true)
+            {
+                if (ageAccepted == true)
+                {
+                    if (nameAccepted == true)
+                    {
+                        if (desc == true)
+                        {
+                            file.WriteLine(name);
+                            file.WriteLine(age);
+                            file.WriteLine(genderBox.Text);
+                            file.WriteLine(descBox.Text);
+                            file.Close();
+                        }
+                    }
+                }
+            }
+        }
     }
 }
+

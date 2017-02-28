@@ -46,3 +46,6 @@ D:\Pro100\FitnessTracker\fitness-gurus\FitnessTracker\obj\Debug\Profile.baml
 D:\Pro100\FitnessTracker\fitness-gurus\FitnessTracker\obj\Debug\FitnessTracker.g.resources
 D:\Pro100\FitnessTracker\fitness-gurus\FitnessTracker\obj\Debug\FitnessTracker.Properties.Resources.resources
 D:\Pro100\FitnessTracker\fitness-gurus\FitnessTracker\obj\Debug\FitnessTracker.csproj.GenerateResource.Cache
+C:\Users\Jochi\Documents\GitHub\fitness-gurus\FitnessTracker\bin\Debug\FitnessTracker.exe.config
+C:\Users\Jochi\Documents\GitHub\fitness-gurus\FitnessTracker\obj\Debug\FitnessTracker.exe
+C:\Users\Jochi\Documents\GitHub\fitness-gurus\FitnessTracker\obj\Debug\FitnessTracker.pdb
