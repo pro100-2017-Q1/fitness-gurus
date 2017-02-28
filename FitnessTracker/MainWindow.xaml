@@ -18,18 +18,85 @@
             </Grid.ColumnDefinitions>
             <TextBox Grid.Row="0" Grid.Column="0" Height="20" Margin="10">Search</TextBox>
             <Image Source="media/simplyFit.png"  Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Margin="146.8,0,94.2,-0.4"></Image>
-            <Button Grid.Row="0" Grid.Column="2" Height="40" Width="40" Margin="512,5,-305.6,4.6" Background="Transparent">
+            <Button Grid.Row="0" Grid.Column="2" Height="40" Width="40" Margin="512,5,-305.6,4.6" Background="Transparent" Click="Profile_Click">
                 <Image Source="media/profile.png" Height="25" Width="25" ></Image>
             </Button>
         </Grid>
-        <Button x:Name="leftArrow" HorizontalAlignment="Left" Margin="28,279,0,0" VerticalAlignment="Top" Width="30" Height="30" Background="Transparent">
+        <Button x:Name="leftArrow" HorizontalAlignment="Left" Margin="28,279,0,0" VerticalAlignment="Top" Width="30" Height="30" Background="Transparent" Click="Arrow_Click" BorderThickness="0">
             <Image Source="media/left.png" Height="25" Width="25" ></Image>
         </Button>
-        <Button x:Name="rightArrow" HorizontalAlignment="Left" Margin="1038,279,0,0" VerticalAlignment="Top" Width="30" Height="30" Background="Transparent">
+        <Button x:Name="rightArrow" HorizontalAlignment="Left" Margin="1038,279,0,0" VerticalAlignment="Top" Width="30" Height="30" Background="Transparent" Click="Arrow_Click" BorderThickness="0">
             <Image Source="media/right.png" Height="25" Width="25" ></Image>
         </Button>
-        <RadioButton x:Name="dot1" HorizontalAlignment="Left" Margin="538,741,0,0" VerticalAlignment="Top" IsChecked="True"/>
-        <RadioButton x:Name="dot2" HorizontalAlignment="Left" Margin="564,741,0,0" VerticalAlignment="Top" />
+        <RadioButton x:Name="dot1" HorizontalAlignment="Left" Margin="543,741,0,0" VerticalAlignment="Top" IsChecked="True"/>
+        <RadioButton x:Name="dot2" HorizontalAlignment="Left" Margin="564,741,0,0" VerticalAlignment="Top" IsChecked="False"/>
+        <Grid Name="ActivityLog" Height="500" Width="800" Visibility="Visible">
+            <StackPanel x:Name="ActivityPanel"
+                    Orientation="Vertical"
+                      Background="#666666" >
+                <StackPanel Orientation="Horizontal">
+                    <ComboBox Width="125" Height="25" Margin="10"/>
+                    <Label Width="550" 
+                       HorizontalContentAlignment="Center"
+                       Foreground="White"
+                       FontSize="24" Content="My Activities"/>
+                    <Button Width="30" Height="30" Background="Transparent" Margin="50 0 0 0">
+                        <Image Source="media/upload.png" Height="25" Width="25" ></Image>
+                    </Button>
 
+
+                </StackPanel>
+                <DataGrid x:Name="Activities"
+                      GridLinesVisibility="All"
+                      AutoGenerateColumns="False">
+                    <!-- items source bind to list of activities-->
+                    <DataGrid.ColumnHeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                            <Setter Property="Background" Value="#2FC191" />
+                            <Setter Property="Foreground" Value="White" />
+                        </Style>
+                    </DataGrid.ColumnHeaderStyle>
+
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Date"     Width="200" Binding="{Binding}" />
+                        <DataGridTextColumn Header="Activity" Width="200" Binding="{Binding}" />
+                        <DataGridTextColumn Header="Calories" Width="200" Binding="{Binding}" />
+                        <DataGridTextColumn Header="Distance" Width="200" Binding="{Binding}" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+        </Grid>
+        <Grid Name="Leaderboard" Height="500" Width="800" Visibility="Hidden">
+            <StackPanel x:Name="leader"
+                    Orientation="Vertical"
+                      Background="#666666" >
+                <StackPanel Orientation="Horizontal">
+                    <Label Width="800" 
+                       HorizontalContentAlignment="Center"
+                       Foreground="White"
+                       FontSize="24" Content="Leaderboard"/>
+
+                </StackPanel>
+                <Grid Height="430">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Grid.Column="0" Grid.Row="0" Background="White" Margin="10"></StackPanel>
+                    <StackPanel Grid.Column="1" Grid.Row="0" Background="White" Margin="10"></StackPanel>
+                    <StackPanel Grid.Column="0" Grid.Row="1" Background="White" Margin="10"></StackPanel>
+                    <StackPanel Grid.Column="1" Grid.Row="1" Background="White" Margin="10"></StackPanel>
+                    <StackPanel Grid.Column="2" Grid.RowSpan="2" Background="White" Margin="10"></StackPanel>
+                </Grid>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Window>

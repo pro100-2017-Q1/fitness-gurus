@@ -18,8 +18,8 @@
             </Grid.ColumnDefinitions>
             <TextBox Grid.Row="0" Grid.Column="0" Height="20" Margin="10">Search</TextBox>
             <Image Source="media/simplyFit.png"  Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Margin="146.8,0,94.2,-0.4"></Image>
-            <Button Grid.Row="0" Grid.Column="2" Height="40" Width="40" Margin="512,5,-305.6,4.6" Background="Transparent">
-                <Image Source="media/profile.png" Height="25" Width="25" ></Image>
+            <Button Grid.Row="0" Grid.Column="2" Height="40" Width="40" Margin="512,5,-305.6,4.6" Background="Transparent" Click="Home_Click">
+                <Image Source="media/home.png" Height="25" Width="25"></Image>
             </Button>
         </Grid>
 
@@ -45,7 +45,7 @@
                 <TextBox Height="136" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" Foreground="#666666">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt libero sit amet nulla suscipit egestas. Ut malesuada turpis ut euismod suscipit. Ut eget eros fermentum, tempor elit id, maximus ipsum. Donec magna ligula, fringilla ac dolor sit amet, gravida lobortis massa. Vestibulum pulvinar leo odio. Nulla eget tempor est. In tempus, massa eget pretium hendrerit, felis velit suscipit turpis, vitae hendrerit erat nisi at nibh.</TextBox>
             </StackPanel>
 
-            <Image Source="media/userEdit.ico" Width="30" Height="30" Margin="1026,353,37.6,9.8"/>
+            <Image Source="media/userEdit.ico" Width="20" Height="20" Margin="1022,345,41.6,17.8"/>
 
             <Border Grid.Row="1" Background="#666666"></Border>
 

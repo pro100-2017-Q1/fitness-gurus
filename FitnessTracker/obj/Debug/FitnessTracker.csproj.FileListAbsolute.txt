@@ -1,2 +1,23 @@
 D:\Pro100\FitnessTracker\FitnessTracker\bin\Debug\FitnessTracker.exe.config
 C:\Users\Dani Meyer\Documents\Quarter 6\Sprint 2\Software Projects\fitness-gurus\FitnessTracker\bin\Debug\FitnessTracker.exe.config
+C:\Users\Dani Meyer\Documents\Quarter 6\Sprint 2\Software Projects\fitness-gurus\FitnessTracker\bin\Debug\FitnessTracker.exe
+C:\Users\Dani Meyer\Documents\Quarter 6\Sprint 2\Software Projects\fitness-gurus\FitnessTracker\bin\Debug\FitnessTracker.pdb
+C:\Users\Dani Meyer\Documents\Quarter 6\Sprint 2\Software Projects\fitness-gurus\FitnessTracker\obj\Debug\FitnessTracker.csprojResolveAssemblyReference.cache
+C:\Users\Dani Meyer\Documents\Quarter 6\Sprint 2\Software Projects\fitness-gurus\FitnessTracker\obj\Debug\ActivityLog.g.cs
+C:\Users\Dani Meyer\Documents\Quarter 6\Sprint 2\Software Projects\fitness-gurus\FitnessTracker\obj\Debug\Leaderboard.g.cs
+C:\Users\Dani Meyer\Documents\Quarter 6\Sprint 2\Software Projects\fitness-gurus\FitnessTracker\obj\Debug\Login.g.cs
+C:\Users\Dani Meyer\Documents\Quarter 6\Sprint 2\Software Projects\fitness-gurus\FitnessTracker\obj\Debug\MainWindow.g.cs
+C:\Users\Dani Meyer\Documents\Quarter 6\Sprint 2\Software Projects\fitness-gurus\FitnessTracker\obj\Debug\Profile.g.cs
+C:\Users\Dani Meyer\Documents\Quarter 6\Sprint 2\Software Projects\fitness-gurus\FitnessTracker\obj\Debug\App.g.cs
+C:\Users\Dani Meyer\Documents\Quarter 6\Sprint 2\Software Projects\fitness-gurus\FitnessTracker\obj\Debug\FitnessTracker_MarkupCompile.cache
+C:\Users\Dani Meyer\Documents\Quarter 6\Sprint 2\Software Projects\fitness-gurus\FitnessTracker\obj\Debug\FitnessTracker_MarkupCompile.lref
+C:\Users\Dani Meyer\Documents\Quarter 6\Sprint 2\Software Projects\fitness-gurus\FitnessTracker\obj\Debug\ActivityLog.baml
+C:\Users\Dani Meyer\Documents\Quarter 6\Sprint 2\Software Projects\fitness-gurus\FitnessTracker\obj\Debug\Leaderboard.baml
+C:\Users\Dani Meyer\Documents\Quarter 6\Sprint 2\Software Projects\fitness-gurus\FitnessTracker\obj\Debug\Login.baml
+C:\Users\Dani Meyer\Documents\Quarter 6\Sprint 2\Software Projects\fitness-gurus\FitnessTracker\obj\Debug\MainWindow.baml
+C:\Users\Dani Meyer\Documents\Quarter 6\Sprint 2\Software Projects\fitness-gurus\FitnessTracker\obj\Debug\Profile.baml
+C:\Users\Dani Meyer\Documents\Quarter 6\Sprint 2\Software Projects\fitness-gurus\FitnessTracker\obj\Debug\FitnessTracker.g.resources
+C:\Users\Dani Meyer\Documents\Quarter 6\Sprint 2\Software Projects\fitness-gurus\FitnessTracker\obj\Debug\FitnessTracker.Properties.Resources.resources
+C:\Users\Dani Meyer\Documents\Quarter 6\Sprint 2\Software Projects\fitness-gurus\FitnessTracker\obj\Debug\FitnessTracker.csproj.GenerateResource.Cache
+C:\Users\Dani Meyer\Documents\Quarter 6\Sprint 2\Software Projects\fitness-gurus\FitnessTracker\obj\Debug\FitnessTracker.exe
+C:\Users\Dani Meyer\Documents\Quarter 6\Sprint 2\Software Projects\fitness-gurus\FitnessTracker\obj\Debug\FitnessTracker.pdb
