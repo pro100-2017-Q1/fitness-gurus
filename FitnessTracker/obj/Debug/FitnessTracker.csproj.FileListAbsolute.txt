@@ -21,3 +21,6 @@ C:\Users\Dani Meyer\Documents\Quarter 6\Sprint 2\Software Projects\fitness-gurus
 C:\Users\Dani Meyer\Documents\Quarter 6\Sprint 2\Software Projects\fitness-gurus\FitnessTracker\obj\Debug\FitnessTracker.csproj.GenerateResource.Cache
 C:\Users\Dani Meyer\Documents\Quarter 6\Sprint 2\Software Projects\fitness-gurus\FitnessTracker\obj\Debug\FitnessTracker.exe
 C:\Users\Dani Meyer\Documents\Quarter 6\Sprint 2\Software Projects\fitness-gurus\FitnessTracker\obj\Debug\FitnessTracker.pdb
+D:\Anjelika\repos\fitness-gurus\fitness-gurus\FitnessTracker\bin\Debug\FitnessTracker.exe.config
+D:\Anjelika\repos\fitness-gurus\fitness-gurus\FitnessTracker\obj\Debug\FitnessTracker.exe
+D:\Anjelika\repos\fitness-gurus\fitness-gurus\FitnessTracker\obj\Debug\FitnessTracker.pdb
