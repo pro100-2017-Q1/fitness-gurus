@@ -34,7 +34,7 @@
 
             <Image Name="profilePic" Width="200" Margin="61,112,832.6,65.8" Source="media/profilePH.png"/>
             <StackPanel Width="300" Height="200" Margin="292,110,501.6,48.4">
-                <Label Foreground="#666666" FontSize="40">John Doe</Label>
+                <TextBox Name="nameBox" Foreground="#666666" FontSize="40">John Doe</TextBox>
                 <TextBox Name="ageBox" FontSize="20" Foreground="#666666">28 Years Old</TextBox>
                 <TextBox Name="genderBox" FontSize="20" Foreground="#666666">Male</TextBox>
                 <TextBox Name="locationBox" FontSize="20" Foreground="#666666">Salt Lake City, UT</TextBox>
@@ -42,7 +42,7 @@
 
             <StackPanel Width="300" Margin="667,110,126.6,50.4">
                 <Label FontSize="20" Foreground="#666666">About Me</Label>
-                <TextBox Height="136" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" Foreground="#666666">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt libero sit amet nulla suscipit egestas. Ut malesuada turpis ut euismod suscipit. Ut eget eros fermentum, tempor elit id, maximus ipsum. Donec magna ligula, fringilla ac dolor sit amet, gravida lobortis massa. Vestibulum pulvinar leo odio. Nulla eget tempor est. In tempus, massa eget pretium hendrerit, felis velit suscipit turpis, vitae hendrerit erat nisi at nibh.</TextBox>
+                <TextBox Name="descBox" Height="136" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" Foreground="#666666">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt libero sit amet nulla suscipit egestas. Ut malesuada turpis ut euismod suscipit. Ut eget eros fermentum, tempor elit id, maximus ipsum. Donec magna ligula, fringilla ac dolor sit amet, gravida lobortis massa. Vestibulum pulvinar leo odio. Nulla eget tempor est. In tempus, massa eget pretium hendrerit, felis velit suscipit turpis, vitae hendrerit erat nisi at nibh.</TextBox>
             </StackPanel>
 
             <Image Source="media/userEdit.ico" Width="20" Height="20" Margin="1022,345,41.6,17.8"/>
@@ -53,22 +53,23 @@
             <StackPanel Orientation="Horizontal" Grid.Row="2" Height="100" Margin="0,147,-0.4,77.8">
                 <StackPanel Margin="100 0 0 0">
                     <Label FontSize="20" Foreground="#666666" VerticalAlignment="Center">Weight</Label>
-                    <TextBox Width="100" Height="30" VerticalAlignment="Center" FontSize="20" Foreground="#666666">200</TextBox>
+                    <TextBox Name="weightBox" Width="100" Height="30" VerticalAlignment="Center" FontSize="20" Foreground="#666666">200</TextBox>
                 </StackPanel>
                 <StackPanel Margin="100 0 0 0">
                     <Label FontSize="20" Foreground="#666666" VerticalAlignment="Center">Height</Label>
                     <StackPanel Orientation="Horizontal">
-                        <TextBox Width="50" Height="30" VerticalAlignment="Center" FontSize="20" Foreground="#666666" Margin="5">5</TextBox>
-                        <TextBox Width="50" Height="30" VerticalAlignment="Center" FontSize="20" Foreground="#666666">4</TextBox>
+                        <TextBox Name="feetBox" Width="50" Height="30" VerticalAlignment="Center" FontSize="20" Foreground="#666666" Margin="5">5</TextBox>
+                        <TextBox Name="inchBox" Width="50" Height="30" VerticalAlignment="Center" FontSize="20" Foreground="#666666">4</TextBox>
                     </StackPanel>
                 </StackPanel>
-                <Button Foreground="White" Background="#2FC191" FontSize="15" Width="200" Margin="60,30,0,40">Upload Activity File</Button>
+                <Button Name="saveButton" Foreground="White" Background="#2FC191" FontSize="15" Width="200" Margin="60,30,0,40" Click="saveButton_Click_1">Upload Activity File</Button>
             </StackPanel>
 
 
             <Calendar Grid.Row="2" Margin="811,103.4,94.6,37.8"/>
 
             <Border Grid.Row="3" Background="#666666"></Border>
+            <Button x:Name="saveButton2" Foreground="White" Background="#2FC191" FontSize="15" Margin="706,328,186,34" Click="saveButton2_Click" Content="Upload Profile"/>
         </Grid>
 
     </Grid>
