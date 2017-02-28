@@ -14,6 +14,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
+using System.Net;
+using System.Diagnostics;
 
 namespace FitnessTracker
 {
@@ -41,6 +43,7 @@ namespace FitnessTracker
             string name = nametbx.Text;
             Match m = nameR.Match(name);
             Match a = ageR.Match(age);
+            Boolean desc = false;
             if (weighttbx != null)
             {
                 weightAccepted = true;
@@ -61,6 +64,10 @@ namespace FitnessTracker
             {
                 genderAccepted = true;
             }
+            if (desctbx != null)
+            {
+                desc = true;
+            }
             if (genderAccepted == true)
             {
                 if (HeightAccepted == true)
@@ -76,6 +83,7 @@ namespace FitnessTracker
                                 file.WriteLine(weighttbx.Text);
                                 file.WriteLine(heighttbx.Text);
                                 file.WriteLine(gendertbx.Text);
+                                file.WriteLine(desctbx.Text);
                                 file.Close();
                             }
                         }
@@ -86,6 +94,7 @@ namespace FitnessTracker
 
         private void loadbtn_Click(object sender, RoutedEventArgs e)
         {
+            Process.Start("notepad.exe", "C:\\Users\\Jochi\\Desktop\\fitness-gurus-Josh-UI\\FitnessTracker\\bin\\Debug\\" + nametbx.Text + ".txt");
             
         }
     }

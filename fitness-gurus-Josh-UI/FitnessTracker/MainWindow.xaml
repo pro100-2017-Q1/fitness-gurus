@@ -13,7 +13,7 @@
         <Label x:Name="FNamelbl" Content="Name" HorizontalAlignment="Left" Margin="254,34,0,0" VerticalAlignment="Top" Height="24"/>
         <Label x:Name="agelbl" Content="Age" HorizontalAlignment="Left" Margin="249,124,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="agetbx" HorizontalAlignment="Left" Height="23" Margin="285,127,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="savebtn" Content="Save Profile" HorizontalAlignment="Left" Margin="539,100,0,0" VerticalAlignment="Top" Width="75" Click="savebtn_Click"/>
+        <Button x:Name="savebtn" Content="Save Profile" HorizontalAlignment="Left" Margin="454,322,0,0" VerticalAlignment="Top" Width="75" Click="savebtn_Click"/>
         <Label x:Name="genderlbl" Content="Gender" HorizontalAlignment="Left" Margin="231,223,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="gendertbx" HorizontalAlignment="Left" Height="23" Margin="285,223,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="weightlbl" Content="Weight" HorizontalAlignment="Left" Margin="231,171,0,0" VerticalAlignment="Top"/>
@@ -22,7 +22,9 @@
         <TextBox x:Name="heighttbx" HorizontalAlignment="Left" Height="23" Margin="285,275,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <Canvas x:Name="Profile_Picture" HorizontalAlignment="Left" Height="150" Margin="32,34,0,0" VerticalAlignment="Top" Width="167" Background="White"/>
         <TextBox x:Name="nametbx" HorizontalAlignment="Left" Height="23" Margin="254,58,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="171"/>
-        <Button x:Name="loadbtn" Content="Load" HorizontalAlignment="Left" Margin="539,171,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="loadbtn" Content="Load" HorizontalAlignment="Left" Margin="592,322,0,0" VerticalAlignment="Top" Width="75" Click="loadbtn_Click"/>
+        <Label x:Name="desclbl" Content="Description" HorizontalAlignment="Left" Margin="470,81,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="desctbx" HorizontalAlignment="Left" Height="108" Margin="470,112,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="197"/>
 
     </Grid>
 </Window>
