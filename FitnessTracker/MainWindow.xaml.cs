@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Smartwatch;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,14 +22,29 @@ namespace FitnessTracker
     /// </summary>
     public partial class MainWindow : Window
     {
+        ObservableCollection<CSVActivity> activityLog = new ObservableCollection<CSVActivity>
+          {
+              new CSVActivity("Walking", 150, 2),
+             new CSVActivity("Biking", 300, 3)
+         };
+
         public MainWindow()
         {
             InitializeComponent();
+
+            SmartWatch sw = new SmartWatch();
+
+            Activities.ItemsSource = activityLog;
+        }
+
+        private void Import_Click(object sender, RoutedEventArgs e)
+        {
+
         }
 
         private void Arrow_Click(object sender, RoutedEventArgs e)
         {
-            if(ActivityLog.Visibility == Visibility.Visible)
+            if (ActivityLog.Visibility == Visibility.Visible)
             {
                 ActivityLog.Visibility = Visibility.Hidden;
                 Leaderboard.Visibility = Visibility.Visible;
@@ -45,8 +62,8 @@ namespace FitnessTracker
 
         private void Profile_Click(object sender, RoutedEventArgs e)
         {
-            Profile profile = new Profile(); 
-            profile.Show(); 
+            Profile profile = new Profile();
+            profile.Show();
             this.Close();
         }
     }
