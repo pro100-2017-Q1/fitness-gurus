@@ -48,6 +48,10 @@ namespace FitnessTracker
             {
                 if (weightAccepted == true)
                 {
+                    file.WriteLine(nameBox.Text);
+                    file.WriteLine(ageBox.Text);
+                    file.WriteLine(genderBox.Text);
+                    file.WriteLine(descBox.Text);
                     file.WriteLine(weightBox.Text);
                     file.WriteLine(feetBox.Text + "''" + inchBox.Text + "'");
                     file.Close();
@@ -99,6 +103,8 @@ namespace FitnessTracker
                             file.WriteLine(age);
                             file.WriteLine(genderBox.Text);
                             file.WriteLine(descBox.Text);
+                            file.WriteLine(weightBox.Text);
+                            file.WriteLine(feetBox.Text + "''" + inchBox.Text + "'");
                             file.Close();
                         }
                     }
