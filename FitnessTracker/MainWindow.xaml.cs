@@ -23,8 +23,8 @@ namespace FitnessTracker
     public partial class MainWindow : Window
     {
         ObservableCollection<CSVActivity> activityLog = new ObservableCollection<CSVActivity>
-          {
-              new CSVActivity("Walking", 150, 2),
+         {
+             new CSVActivity("Walking", 150, 2),
              new CSVActivity("Biking", 300, 3)
          };
 
@@ -39,7 +39,7 @@ namespace FitnessTracker
 
         private void Import_Click(object sender, RoutedEventArgs e)
         {
-
+            CSVConverter.AddToActivities(activityLog, out activityLog);
         }
 
         private void Arrow_Click(object sender, RoutedEventArgs e)

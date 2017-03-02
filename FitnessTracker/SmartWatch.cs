@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
+using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 
 namespace Smartwatch
@@ -75,35 +76,31 @@ namespace Smartwatch
 
     }
 
-    public class CSVConverter
+    public static class CSVConverter
     {
 
-        public CSVActivity ConvertToList()
+        public static void AddToActivities(ObservableCollection<CSVActivity> activities, out ObservableCollection<CSVActivity> activityOutput)
         {
-            ObservableCollection<CSVActivity> Activities = new ObservableCollection<CSVActivity>();
-
             Regex rr = new Regex(@"(w\+),(d+),(d+)");
-
-            string placeholder = GetStringFromFile().Result;
-            //while(placeholder.Length < 0)
+            activityOutput = activities;
+            string placeholder = /*await*/ GetStringFromFile()/*.Result*/;
+            //while ()
             //{
-            //rr.Match(placeholder);
-            //Activities.Add(new CSVActivity(placeholder, 2, 2));
-            //    placeholder = GetStringFromFile("fitness_data.csv").Result;
+            Match stuff = rr.Match(placeholder);
+            activityOutput.Add(new CSVActivity(stuff.Value, 2, 2));
+            placeholder = GetStringFromFile()/*.Result*/;
             //}
 
-
-
-            return new CSVActivity(placeholder, 2, 2);
+            
         }
 
-        private async System.Threading.Tasks.Task<string> GetStringFromFile()
+        private static /*async Task<string>*/ string GetStringFromFile()
         {
             try
             {
                 using (StreamReader sr = new StreamReader("D:\\Pro100\\FitnessTracker\\fitness-gurus\\FitnessTracker\\bin\\Debug\\fitness_data.csv"))
                 {
-                    return await sr.ReadLineAsync();
+                    return /*await*/ sr.ReadLine/*Async*/();
                 }
             }
             catch (Exception e)
