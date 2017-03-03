@@ -64,7 +64,6 @@ namespace FitnessTracker
         {
             Profile profile = new Profile();
             profile.Show();
-            this.Close();
         }
     }
 }

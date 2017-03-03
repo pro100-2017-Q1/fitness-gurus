@@ -31,6 +31,9 @@ namespace FitnessTracker
         {
             // if username and password are correct goes to other pages
             // if username and password are incorrect, makes you try again
+            MainWindow main = new MainWindow();
+            main.Show();
+            this.Close();
         }
         private void tbxUsername_TextChanged(object sender, TextChangedEventArgs e)
         {
