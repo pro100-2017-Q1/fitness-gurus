@@ -76,43 +76,6 @@ namespace Smartwatch
 
     }
 
-    public static class CSVConverter
-    {
-
-        public static void AddToActivities(ObservableCollection<CSVActivity> activities, out ObservableCollection<CSVActivity> activityOutput)
-        {
-            Regex rr = new Regex(@"(w\+),(d+),(d+)");
-            activityOutput = activities;
-            string placeholder = /*await*/ GetStringFromFile()/*.Result*/;
-            //while ()
-            //{
-            Match stuff = rr.Match(placeholder);
-            activityOutput.Add(new CSVActivity(stuff.Value, 2, 2));
-            placeholder = GetStringFromFile()/*.Result*/;
-            //}
-
-            
-        }
-
-        private static /*async Task<string>*/ string GetStringFromFile()
-        {
-            try
-            {
-                using (StreamReader sr = new StreamReader("D:\\Pro100\\FitnessTracker\\fitness-gurus\\FitnessTracker\\bin\\Debug\\fitness_data.csv"))
-                {
-                    return /*await*/ sr.ReadLine/*Async*/();
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Something Broke " + e.Message);
-            }
-            return null;
-
-
-        }
-    }
-
     public class CSVActivity
     {
         public DateTime Date { get; set; }

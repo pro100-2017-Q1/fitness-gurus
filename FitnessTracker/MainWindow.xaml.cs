@@ -2,8 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -37,9 +39,9 @@ namespace FitnessTracker
             Activities.ItemsSource = activityLog;
         }
 
-        private void Import_Click(object sender, RoutedEventArgs e)
+        private async void Import_Click(object sender, RoutedEventArgs e)
         {
-            CSVConverter.AddToActivities(activityLog, out activityLog);
+            await GetActivities();
         }
 
         private void Arrow_Click(object sender, RoutedEventArgs e)
@@ -66,5 +68,27 @@ namespace FitnessTracker
             profile.Show();
             this.Close();
         }
+        public async Task<object> GetActivities()
+        {
+
+            Regex rr = new Regex(@"(w\+),(d+),(d+)");
+
+
+            string placeholder = "";
+            using (StreamReader sr = new StreamReader(Directory.GetCurrentDirectory() + "\\fitness_data.csv"))
+            {
+                placeholder = await sr.ReadToEndAsync();
+            }
+
+
+
+            //while ()
+            //{
+            Match stuff = rr.Match(placeholder);
+            activityLog.Add(new CSVActivity(/*stuff.Value*/ placeholder, 2, 2));
+            //}
+            return new object();
+        }
     }
+
 }
