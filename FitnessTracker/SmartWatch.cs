@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
+using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 
 namespace Smartwatch
@@ -73,47 +74,6 @@ namespace Smartwatch
             ActivityLogGenerator.GenerateActivityLog("fitness_data.csv", 120);
         }
 
-    }
-
-    public class CSVConverter
-    {
-
-        public CSVActivity ConvertToList()
-        {
-            ObservableCollection<CSVActivity> Activities = new ObservableCollection<CSVActivity>();
-
-            Regex rr = new Regex(@"(w\+),(d+),(d+)");
-
-            string placeholder = GetStringFromFile().Result;
-            //while(placeholder.Length < 0)
-            //{
-            //rr.Match(placeholder);
-            //Activities.Add(new CSVActivity(placeholder, 2, 2));
-            //    placeholder = GetStringFromFile("fitness_data.csv").Result;
-            //}
-
-
-
-            return new CSVActivity(placeholder, 2, 2);
-        }
-
-        private async System.Threading.Tasks.Task<string> GetStringFromFile()
-        {
-            try
-            {
-                using (StreamReader sr = new StreamReader("D:\\Pro100\\FitnessTracker\\fitness-gurus\\FitnessTracker\\bin\\Debug\\fitness_data.csv"))
-                {
-                    return await sr.ReadLineAsync();
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Something Broke " + e.Message);
-            }
-            return null;
-
-
-        }
     }
 
     public class CSVActivity

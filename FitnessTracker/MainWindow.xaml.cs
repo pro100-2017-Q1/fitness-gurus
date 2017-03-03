@@ -1,7 +1,11 @@
-﻿using System;
+﻿using Smartwatch;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -20,14 +24,29 @@ namespace FitnessTracker
     /// </summary>
     public partial class MainWindow : Window
     {
+        ObservableCollection<CSVActivity> activityLog = new ObservableCollection<CSVActivity>
+         {
+             new CSVActivity("Walking", 150, 2),
+             new CSVActivity("Biking", 300, 3)
+         };
+
         public MainWindow()
         {
             InitializeComponent();
+
+            SmartWatch sw = new SmartWatch();
+
+            Activities.ItemsSource = activityLog;
+        }
+
+        private async void Import_Click(object sender, RoutedEventArgs e)
+        {
+            await GetActivities();
         }
 
         private void Arrow_Click(object sender, RoutedEventArgs e)
         {
-            if(ActivityLog.Visibility == Visibility.Visible)
+            if (ActivityLog.Visibility == Visibility.Visible)
             {
                 ActivityLog.Visibility = Visibility.Hidden;
                 Leaderboard.Visibility = Visibility.Visible;
@@ -45,9 +64,30 @@ namespace FitnessTracker
 
         private void Profile_Click(object sender, RoutedEventArgs e)
         {
-            Profile profile = new Profile(); 
-            profile.Show(); 
-            this.Close();
+            Profile profile = new Profile();
+            profile.Show();
+        }
+        public async Task<object> GetActivities()
+        {
+
+            Regex rr = new Regex(@"(w\+),(d+),(d+)");
+
+
+            string placeholder = "";
+            using (StreamReader sr = new StreamReader(Directory.GetCurrentDirectory() + "\\fitness_data.csv"))
+            {
+                placeholder = await sr.ReadToEndAsync();
+            }
+
+
+
+            //while ()
+            //{
+            Match stuff = rr.Match(placeholder);
+            activityLog.Add(new CSVActivity(/*stuff.Value*/ placeholder, 2, 2));
+            //}
+            return new object();
         }
     }
+
 }

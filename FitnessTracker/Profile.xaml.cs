@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,6 +32,20 @@ namespace FitnessTracker
             home.Show();
             this.Close();
         }
+
+        private void ProfilePicUpload(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog op = new OpenFileDialog();
+            op.Title = "Select a picture";
+            op.Filter = "All supported graphics|*.jpg;*.jpeg;*.png|" +
+              "JPEG (*.jpg;*.jpeg)|*.jpg;*.jpeg|" +
+              "Portable Network Graphic (*.png)|*.png";
+            if (op.ShowDialog() == true)
+            {
+                profilePic.Source = new BitmapImage(new Uri(op.FileName));
+            }
+        }
+
         private void saveButton_Click_1(object sender, RoutedEventArgs e)
         {
             System.IO.StreamWriter file = new System.IO.StreamWriter(nameBox.Text + ".txt");
@@ -48,6 +63,10 @@ namespace FitnessTracker
             {
                 if (weightAccepted == true)
                 {
+                    file.WriteLine(nameBox.Text);
+                    file.WriteLine(ageBox.Text);
+                    file.WriteLine(genderBox.Text);
+                    file.WriteLine(descBox.Text);
                     file.WriteLine(weightBox.Text);
                     file.WriteLine(feetBox.Text + "''" + inchBox.Text + "'");
                     file.Close();
@@ -99,6 +118,8 @@ namespace FitnessTracker
                             file.WriteLine(age);
                             file.WriteLine(genderBox.Text);
                             file.WriteLine(descBox.Text);
+                            file.WriteLine(weightBox.Text);
+                            file.WriteLine(feetBox.Text + "''" + inchBox.Text + "'");
                             file.Close();
                         }
                     }
