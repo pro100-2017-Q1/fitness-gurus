@@ -6,32 +6,31 @@
         xmlns:local="clr-namespace:FitnessTracker"
         mc:Ignorable="d"
         Title="MainWindow" Height="800" Width="1100">
-    <Grid x:Name="SplashPageGrid" Background="#666666" Margin="113,0,117.4,-0.2" Width="350" Height="400">
+    <Grid x:Name="SplashPageGrid" Background="#666666" Margin="113,0,117.4,0" Width="350" Height="400">
         <Grid.RowDefinitions>
             <RowDefinition Height="0*"/>
-            <RowDefinition Height="130*"/>
-            <RowDefinition Height="191*"/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="13*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="13*"/>
             <ColumnDefinition Width="0*"/>
             <ColumnDefinition Width="131*"/>
         </Grid.ColumnDefinitions>
-        <Label x:Name="LoginLabel" Content="Login" Margin="99.4,98,117,190.8" Foreground="White" Grid.Column="2" 
-               Grid.RowSpan="3"/>
-        <TextBox x:Name="tbxUsername" HorizontalAlignment="Left" Height="27" Margin="4.4,20.4,0,0"
+        <Label x:Name="LoginLabel" Content="Login" Margin="109,95,127.4,243" Foreground="White" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" FontSize="25" Width="82" Grid.RowSpan="2"/>
+        <TextBox x:Name="tbxUsername" HorizontalAlignment="Left" Height="27" Margin="29,47,0,0"
                  TextWrapping="Wrap" Text="Username" GotFocus="tbxUsername_GotFocus" VerticalAlignment="Top"
                  Width="225" TextChanged="tbxUsername_TextChanged" Foreground="Gray" Grid.Row="2" Grid.Column="2"
                  FontSize="13"/>
-        <PasswordBox x:Name="tbxPassword" HorizontalAlignment="Left" Height="27" Margin="4.4,52.4,0,0"
+        <PasswordBox x:Name="tbxPassword" HorizontalAlignment="Left" Height="27" Margin="29,102,0,0"
                   VerticalAlignment="Top" Width="225"  Foreground="Gray" Grid.Row="2" Grid.Column="2"
                   PasswordChar="*" MaxLength="8" PasswordChanged="tbxPassword_PasswordChanged"/>
-        <Button x:Name="loginButton" Content="Login" HorizontalAlignment="Left" Margin="4.4,88.4,0,0"
+        <Button x:Name="loginButton" Content="Login" HorizontalAlignment="Left" Margin="29,178,0,0"
                 VerticalAlignment="Top" Width="70" Click="loginButtonChanged_Click" Background="#2FC191"
                 BorderBrush="White" Foreground="White" Height="27" Grid.Row="2" Grid.Column="2"/>
-        <Button x:Name="forgottenPasswordLabel" Content="Forgotten Password?" Margin="109.4,88.4,33,73.8" 
+        <Button x:Name="newUserLabel" Content="New User" Margin="109,186,33.4,47" 
                 Background="Transparent" BorderBrush="Transparent" Click="forgottenPasswordLabel_Click"
                 Foreground="White" RenderTransformOrigin="1.15,0.603" Grid.Column="2" Grid.Row="2"/>
-        <Image Source="media/simplyFit.png" Width="200" Height="100"/>
+        <Image Source="media/simplyFit.png" Margin="29,10,89.4,40" Grid.RowSpan="2" Grid.Column="2"/>
     </Grid>
 </Window>

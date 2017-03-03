@@ -32,7 +32,9 @@
                 <RowDefinition Height="50"/>
             </Grid.RowDefinitions>
 
-            <Image Name="profilePic" Width="200" Margin="61,112,832.6,65.8" Source="media/profilePH.png"/>
+            <Button  Width="200" Height="200" Background="Transparent" Margin="61,112,832.6,91.8" Click="ProfilePicUpload">
+                <Image Name="profilePic" Source="media/profilePH.png"/>
+            </Button>
             <StackPanel Width="300" Height="200" Margin="292,110,501.6,48.4">
                 <TextBox Name="nameBox" Foreground="#666666" FontSize="40">John Doe</TextBox>
                 <TextBox Name="ageBox" FontSize="20" Foreground="#666666">28 Years Old</TextBox>
@@ -69,7 +71,7 @@
             <Calendar Grid.Row="2" Margin="811,103.4,94.6,37.8"/>
 
             <Border Grid.Row="3" Background="#666666"></Border>
-            <Button x:Name="saveButton2" Foreground="White" Background="#2FC191" FontSize="15" Margin="706,328,186,34" Click="saveButton2_Click" Content="Upload Profile"/>
+            <Button x:Name="saveButton2" Foreground="White" Background="#2FC191" FontSize="15" Margin="706,328,185.6,22.8" Height="30" Click="saveButton2_Click" Content="Update Profile"/>
         </Grid>
 
     </Grid>
