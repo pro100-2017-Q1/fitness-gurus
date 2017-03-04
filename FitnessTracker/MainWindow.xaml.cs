@@ -86,6 +86,21 @@ namespace FitnessTracker
             }
             return 0;
         }
+
+        private void dot1_Checked(object sender, RoutedEventArgs e)
+        {
+            
+            ActivityLog.Visibility = Visibility.Visible;
+            Leaderboard.Visibility = Visibility.Hidden;
+
+        }
+
+        private void dot2_Checked(object sender, RoutedEventArgs e)
+        {
+            ActivityLog.Visibility = Visibility.Hidden;
+            Leaderboard.Visibility = Visibility.Visible;
+
+        }
     }
 
 }
