@@ -12,13 +12,13 @@
                 <RowDefinition Height="50"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="230" />
-                <ColumnDefinition Width="300" />
-                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
-            <TextBox Grid.Row="0" Grid.Column="0" Height="20" Margin="10">Search</TextBox>
-            <Image Source="media/simplyFit.png"  Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Margin="146.8,0,94.2,-0.4"></Image>
-            <Button Grid.Row="0" Grid.Column="2" Height="40" Width="40" Margin="512,5,-305.6,4.6" Background="Transparent" Click="Home_Click">
+            <TextBox Grid.Row="0" Grid.Column="0" Height="20" Margin="10" Width="200" HorizontalAlignment="Left">Search</TextBox>
+            <Image Source="media/simplyFit.png"  Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch"></Image>
+            <Button Grid.Row="0" Grid.Column="2" Height="40" Width="40" HorizontalAlignment="Right" Margin="0,0,10,0" Background="Transparent" Click="Home_Click">
                 <Image Source="media/home.png" Height="25" Width="25"></Image>
             </Button>
         </Grid>
@@ -47,8 +47,6 @@
                 <TextBox Name="descBox" Height="136" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" Foreground="#666666">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt libero sit amet nulla suscipit egestas. Ut malesuada turpis ut euismod suscipit. Ut eget eros fermentum, tempor elit id, maximus ipsum. Donec magna ligula, fringilla ac dolor sit amet, gravida lobortis massa. Vestibulum pulvinar leo odio. Nulla eget tempor est. In tempus, massa eget pretium hendrerit, felis velit suscipit turpis, vitae hendrerit erat nisi at nibh.</TextBox>
             </StackPanel>
 
-            <Image Source="media/userEdit.ico" Width="20" Height="20" Margin="1022,345,41.6,17.8"/>
-
             <Border Grid.Row="1" Background="#666666"></Border>
 
             <Label FontSize="40" Grid.Row="2" Foreground="#2FC191" Margin="10,17,733.6,217.8" Width="350">Today's Statistics</Label>
@@ -71,7 +69,7 @@
             <Calendar Grid.Row="2" Margin="811,103.4,94.6,37.8"/>
 
             <Border Grid.Row="3" Background="#666666"></Border>
-            <Button x:Name="saveButton2" Foreground="White" Background="#2FC191" FontSize="15" Margin="706,328,185.6,22.8" Height="30" Click="saveButton2_Click" Content="Update Profile"/>
+            <Button x:Name="saveButton2" Foreground="White" Background="#2FC191" FontSize="15" Height="30" Click="saveButton2_Click" Content="Update Profile" Margin="848,321,45.6,41.8" Width="200"/>
         </Grid>
 
     </Grid>
