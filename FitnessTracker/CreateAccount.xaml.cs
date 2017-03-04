@@ -23,5 +23,25 @@ namespace FitnessTracker
         {
             InitializeComponent();
         }
+
+        private void createbtn_Click(object sender, RoutedEventArgs e)
+        {
+            System.IO.StreamWriter file = new System.IO.StreamWriter(tbxUsername.Text + ".txt");
+            if (tbxUsername.Text != null)
+            {
+                if(passwordtbx != null)
+                {
+                    if (nametbx.Text != null)
+                    {
+                        file.WriteLine(tbxUsername.Text);
+                        file.WriteLine(passwordtbx);
+                        file.WriteLine(nametbx.Text);
+                        Profile p = new Profile();
+                        p.Show();
+                        this.Close();
+                    }
+                }
+            }
+        }
     }
 }

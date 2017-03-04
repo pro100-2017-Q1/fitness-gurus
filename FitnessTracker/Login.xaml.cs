@@ -54,5 +54,12 @@ namespace FitnessTracker
             // Regex: 
 
         }
+
+        private void newUserLabel_Click(object sender, RoutedEventArgs e)
+        {
+            CreateAccount c = new FitnessTracker.CreateAccount();
+            c.Show();
+            this.Close();
+        }
     }
 }
