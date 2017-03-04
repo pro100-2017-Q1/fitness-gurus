@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FitnessTracker"
         mc:Ignorable="d"
-        Title="CreateAccount" Height="800" Width="1100">
+        Title="Create Account" Height="800" Width="1100">
     <Grid>
         <Grid x:Name="SplashPageGrid" Background="#666666" Margin="135,138,185,232" Height="400">
             <Grid.RowDefinitions>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FitnessTracker"
         mc:Ignorable="d"
-        Title="MainWindow" Height="800" Width="1100">
+        Title="Login" Height="800" Width="1100">
     <Grid x:Name="SplashPageGrid" Background="#666666" Margin="370,185,373.6,260.4" Width="350">
         <Grid.RowDefinitions>
             <RowDefinition Height="0*"/>
@@ -38,7 +38,7 @@
                 BorderBrush="White" Foreground="White" Height="27" Grid.Row="2" Grid.Column="2"/>
         <Button x:Name="newUserLabel" Content="New User" Margin="179.8,111.8,55.6,16.6"
                 Background="Transparent" BorderBrush="Transparent" 
-                Foreground="White" RenderTransformOrigin="1.15,0.603" Grid.Column="2" Grid.Row="2" Click="newUserLabel_Click"/>
+                Foreground="White" RenderTransformOrigin="1.15,0.603" Grid.Column="2" Grid.Row="2" Click="newUserLabel_Click" Visibility="Hidden"/>
         <Image Source="media/simplyFit.png" Margin="37.8,13,55.6,37.2" Grid.RowSpan="2" Grid.Column="2"/>
 
     </Grid>
