@@ -67,6 +67,7 @@ namespace FitnessTracker
                     file.WriteLine(descBox.Text);
                     file.WriteLine(weightBox.Text);
                     file.WriteLine(feetBox.Text + "''" + inchBox.Text + "'");
+                    file.WriteLine(profilePic.Source);
                     file.Close();
                 }
             }
@@ -118,6 +119,7 @@ namespace FitnessTracker
                             file.WriteLine(descBox.Text);
                             file.WriteLine(weightBox.Text);
                             file.WriteLine(feetBox.Text + "''" + inchBox.Text + "'");
+                            file.WriteLine(profilePic.Source);
                             file.Close();
                         }
                     }
