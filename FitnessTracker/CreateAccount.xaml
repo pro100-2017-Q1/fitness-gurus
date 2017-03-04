@@ -28,7 +28,7 @@
                 PasswordChar="*" MaxLength="8"/>
             <Button x:Name="createbtn" Content="Create Account" HorizontalAlignment="Left" Margin="284,142,0,0"
                 VerticalAlignment="Top" Width="94" Background="#2FC191"
-                BorderBrush="White" Foreground="White" Height="27" Grid.Row="2" Grid.Column="2"/>
+                BorderBrush="White" Foreground="White" Height="27" Grid.Row="2" Grid.Column="2" Click="createbtn_Click"/>
             <Image Source="media/simplyFit.png" Width="200" Height="100"/>
             <Label x:Name="createlbl" Content="Create Account" Grid.Column="2" HorizontalAlignment="Left" Margin="221,34,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Height="66" Width="222" FontFamily="Times New Roman" FontSize="32" Foreground="White" />
             <TextBox x:Name="nametbx" Grid.Column="2" HorizontalAlignment="Left" Height="27" Margin="221,66,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="225" Grid.Row="2"/>
