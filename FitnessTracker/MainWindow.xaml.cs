@@ -67,26 +67,24 @@ namespace FitnessTracker
             Profile profile = new Profile();
             profile.Show();
         }
-        public async Task<object> GetActivities()
+        public async Task<byte> GetActivities()
         {
-
-            Regex rr = new Regex(@"(w\+),(d+),(d+)");
-
-
-            string placeholder = "";
+            string pattern = @"([A-Za-z]+),([0-9]+),([0-9]+)";
+            string input = "";
             using (StreamReader sr = new StreamReader(Directory.GetCurrentDirectory() + "\\fitness_data.csv"))
             {
-                placeholder = await sr.ReadToEndAsync();
+                input = await sr.ReadToEndAsync();
             }
+                                  
+            MatchCollection matches = Regex.Matches(input, pattern);
 
-
-
-            //while ()
-            //{
-            Match stuff = rr.Match(placeholder);
-            activityLog.Add(new CSVActivity(/*stuff.Value*/ placeholder, 2, 2));
-            //}
-            return new object();
+            foreach (Match m in matches)
+            {
+                int cals = int.Parse(m.Groups[2].Value);
+                int dist = int.Parse(m.Groups[3].Value);
+                activityLog.Add(new CSVActivity(m.Groups[1].Value, cals, dist));
+            }
+            return 0;
         }
     }
 

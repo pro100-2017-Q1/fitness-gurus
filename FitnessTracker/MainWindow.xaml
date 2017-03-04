@@ -48,7 +48,8 @@
                 </StackPanel>
                 <DataGrid x:Name="Activities"
                       GridLinesVisibility="All"
-                      AutoGenerateColumns="False">
+                      AutoGenerateColumns="False"
+                      Height="455">
                     <DataGrid.ColumnHeaderStyle>
                         <Style TargetType="DataGridColumnHeader">
                             <Setter Property="HorizontalContentAlignment" Value="Center" />

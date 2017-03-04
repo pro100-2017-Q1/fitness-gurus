@@ -85,7 +85,7 @@ namespace Smartwatch
 
         public CSVActivity(string ActivityType, int Calories, int Distance)
         {
-            Date = System.DateTime.Today;
+            Date = DateTime.Now;
             this.Type = ActivityType;
             this.Calories = Calories;
             this.Distance = Distance;
