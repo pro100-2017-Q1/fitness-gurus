@@ -24,7 +24,11 @@ namespace FitnessTracker
     /// </summary>
     public partial class MainWindow : Window
     {
-        ObservableCollection<CSVActivity> activityLog = new ObservableCollection<CSVActivity>();
+        ObservableCollection<CSVActivity> activityLog = new ObservableCollection<CSVActivity>
+         {
+             new CSVActivity("Walking", 150, 2),
+             new CSVActivity("Biking", 300, 3)
+         };
 
         public MainWindow()
         {
