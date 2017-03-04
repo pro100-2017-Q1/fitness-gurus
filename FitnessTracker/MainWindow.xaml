@@ -25,11 +25,7 @@
         <Button x:Name="leftArrow" HorizontalAlignment="Left" Margin="28,279,0,0" VerticalAlignment="Top" Width="30" Height="30" Background="Transparent" Click="Arrow_Click" BorderThickness="0">
             <Image Source="media/left.png" Height="25" Width="25" ></Image>
         </Button>
-        <Button x:Name="rightArrow" HorizontalAlignment="Left" Margin="1038,279,0,0" VerticalAlignment="Top" Width="30" Height="30" Background="Transparent" Click="Arrow_Click" BorderThickness="0">
-            <Image Source="media/right.png" Height="25" Width="25" ></Image>
-        </Button>
-        <RadioButton x:Name="dot1" HorizontalAlignment="Left" Margin="543,741,0,0" VerticalAlignment="Top" IsChecked="True"/>
-        <RadioButton x:Name="dot2" HorizontalAlignment="Left" Margin="564,741,0,0" VerticalAlignment="Top" IsChecked="False"/>
+
         <Grid Name="ActivityLog" Height="500" Width="800" Visibility="Visible">
             <StackPanel x:Name="ActivityPanel"
                     Orientation="Vertical"
@@ -98,5 +94,11 @@
                 </Grid>
             </StackPanel>
         </Grid>
+
+        <RadioButton x:Name="dot1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,20,10" IsChecked="True" Checked="dot1_Checked"/>
+        <RadioButton x:Name="dot2" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Margin="20,0,00,10" IsChecked="False" Checked="dot2_Checked"/>
+        <Button x:Name="rightArrow" HorizontalAlignment="Right" Margin="0,279,33.6,0"  VerticalAlignment="Top" Width="30" Height="30" Background="Transparent" Click="Arrow_Click" BorderThickness="0">
+            <Image Source="media/right.png" />
+        </Button>
     </Grid>
 </Window>
