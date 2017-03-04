@@ -27,11 +27,11 @@ namespace FitnessTracker
         private void createbtn_Click(object sender, RoutedEventArgs e)
         {
             System.IO.StreamWriter file = new System.IO.StreamWriter(tbxUsername.Text + ".txt");
-            if (tbxUsername.Text != null)
+            if (tbxUsername.Text != "")
             {
                 if(passwordtbx != null)
                 {
-                    if (nametbx.Text != null)
+                    if (nametbx.Text != "")
                     {
                         file.WriteLine(tbxUsername.Text);
                         file.WriteLine(passwordtbx);
@@ -41,6 +41,10 @@ namespace FitnessTracker
                         this.Close();
                     }
                 }
+            }
+            else
+            {
+                tbxUsername.Text = "Put Something In";
             }
         }
     }
