@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -21,6 +22,7 @@ namespace FitnessTracker
     /// </summary>
     public partial class Profile : Window
     {
+        
         public Profile()
         {
             InitializeComponent();
@@ -46,7 +48,7 @@ namespace FitnessTracker
 
         private void saveButton_Click_1(object sender, RoutedEventArgs e)
         {
-            System.IO.StreamWriter file = new System.IO.StreamWriter(nameBox.Text + ".txt");
+            System.IO.StreamWriter file = new System.IO.StreamWriter(nameBox.Text + ".txt", true);
             Boolean weightAccepted = false;
             Boolean HeightAccepted = false;
             if (weightBox != null)
@@ -61,22 +63,19 @@ namespace FitnessTracker
             {
                 if (weightAccepted == true)
                 {
-                    file.WriteLine(nameBox.Text);
-                    file.WriteLine(ageBox.Text);
-                    file.WriteLine(genderBox.Text);
-                    file.WriteLine(descBox.Text);
                     file.WriteLine(weightBox.Text);
                     file.WriteLine(feetBox.Text + "''" + inchBox.Text + "'");
-                    file.WriteLine(profilePic.Source);
                     file.Close();
                 }
             }
-
         }
-
         private void saveButton2_Click(object sender, RoutedEventArgs e)
         {
-            System.IO.StreamWriter file = new System.IO.StreamWriter(nameBox.Text + ".txt");
+            if (File.Exists(nameBox.Text + ".txt"))
+            {
+                File.Delete(nameBox.Text + ".txt");
+            }
+            System.IO.StreamWriter file = new System.IO.StreamWriter(nameBox.Text + ".txt", true);
             Boolean ageAccepted = false;
             string ageRegex = "([0-9]+)";
             Regex ageR = new Regex(ageRegex);
@@ -117,8 +116,6 @@ namespace FitnessTracker
                             file.WriteLine(age);
                             file.WriteLine(genderBox.Text);
                             file.WriteLine(descBox.Text);
-                            file.WriteLine(weightBox.Text);
-                            file.WriteLine(feetBox.Text + "''" + inchBox.Text + "'");
                             file.WriteLine(profilePic.Source);
                             file.Close();
                         }
@@ -128,4 +125,3 @@ namespace FitnessTracker
         }
     }
 }
-
