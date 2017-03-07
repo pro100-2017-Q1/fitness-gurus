@@ -23,10 +23,6 @@ namespace FitnessTracker
         {
             InitializeComponent();
         }
-        private void forgottenPasswordLabel_Click(object sender, RoutedEventArgs e)
-        {
-            // where does it go from here ??
-        }
         private void loginButtonChanged_Click(object sender, RoutedEventArgs e)
         {
             // if username and password are correct goes to other pages
