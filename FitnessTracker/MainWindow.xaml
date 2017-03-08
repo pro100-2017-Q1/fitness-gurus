@@ -28,7 +28,7 @@
             <Image Source="media/left.png" Height="25" Width="25" ></Image>
         </Button>
 
-        <Grid Name="ActivityLog" Height="500" Width="800" Visibility="Hidden">
+        <Grid Name="ActivityLog" Height="500" Width="800" Visibility="Visible">
             <StackPanel x:Name="ActivityPanel"
                     Orientation="Vertical"
                       Background="#666666" >
@@ -70,7 +70,7 @@
                 </DataGrid>
             </StackPanel>
         </Grid>
-        <Grid Name="Leaderboard" Height="500" Width="800" Visibility="Visible">
+        <Grid Name="Leaderboard" Height="500" Width="800" Visibility="Hidden">
             <StackPanel x:Name="leader"
                     Orientation="Vertical"
                       Background="#666666" >
