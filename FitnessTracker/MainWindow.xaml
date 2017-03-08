@@ -22,6 +22,8 @@
                 <Image Source="media/profile.png" Height="25" Width="25" ></Image>
             </Button>
         </Grid>
+        <!--Reminder to change start-up uri to Login.xaml
+                             StartupUri="Login.xaml" -->
         <Button x:Name="leftArrow" HorizontalAlignment="Left" Margin="28,279,0,0" VerticalAlignment="Top" Width="30" Height="30" Background="Transparent" Click="Arrow_Click" BorderThickness="0">
             <Image Source="media/left.png" Height="25" Width="25" ></Image>
         </Button>

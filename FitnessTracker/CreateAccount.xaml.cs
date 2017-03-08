@@ -24,28 +24,35 @@ namespace FitnessTracker
             InitializeComponent();
         }
 
-        private void createbtn_Click(object sender, RoutedEventArgs e)
+        private void registration_Click(object sender, RoutedEventArgs e)
         {
-            System.IO.StreamWriter file = new System.IO.StreamWriter(tbxUsername.Text + ".txt");
-            if (tbxUsername.Text != "")
-            {
-                if(passwordtbx != null)
-                {
-                    if (nametbx.Text != "")
-                    {
-                        file.WriteLine(tbxUsername.Text);
-                        file.WriteLine(passwordtbx);
-                        file.WriteLine(nametbx.Text);
-                        Profile p = new Profile();
-                        p.Show();
-                        this.Close();
-                    }
-                }
-            }
-            else
-            {
-                tbxUsername.Text = "Put Something In";
-            }
+            //System.IO.StreamWriter file = new System.IO.StreamWriter(tbxUsername.Text + ".txt");
+            //if (tbxUsername.Text != "")
+            //{
+            //    if(passwordtbx != null)
+            //    {
+            //        if (nametbx.Text != "")
+            //        {
+            //            file.WriteLine(tbxUsername.Text);
+            //            file.WriteLine(passwordtbx);
+            //            file.WriteLine(nametbx.Text);
+            //            Profile p = new Profile();
+            //            p.Show();
+            //            this.Close();
+            //        }
+            //    }
+            //}
+            //else
+            //{
+            //    tbxUsername.Text = "Put Something In";
+            //}
         }
+        private void tbx_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox tbx = (TextBox)sender;
+            tbx.Text = string.Empty;
+            tbx.GotFocus -= tbx_GotFocus;
+        }
+
     }
 }
