@@ -28,7 +28,7 @@
             <Image Source="media/left.png" Height="25" Width="25" ></Image>
         </Button>
 
-        <Grid Name="ActivityLog" Height="500" Width="800" Visibility="Visible">
+        <Grid Name="ActivityLog" Height="500" Width="800" Visibility="Hidden">
             <StackPanel x:Name="ActivityPanel"
                     Orientation="Vertical"
                       Background="#666666" >
@@ -70,7 +70,7 @@
                 </DataGrid>
             </StackPanel>
         </Grid>
-        <Grid Name="Leaderboard" Height="500" Width="800" Visibility="Hidden">
+        <Grid Name="Leaderboard" Height="500" Width="800" Visibility="Visible">
             <StackPanel x:Name="leader"
                     Orientation="Vertical"
                       Background="#666666" >
@@ -93,11 +93,21 @@
 
                     </Grid.RowDefinitions>
 
-                    <StackPanel Grid.Column="0" Grid.Row="0" Background="White" Margin="10"></StackPanel>
-                    <StackPanel Grid.Column="1" Grid.Row="0" Background="White" Margin="10"></StackPanel>
-                    <StackPanel Grid.Column="0" Grid.Row="1" Background="White" Margin="10"></StackPanel>
-                    <StackPanel Grid.Column="1" Grid.Row="1" Background="White" Margin="10"></StackPanel>
-                    <StackPanel Grid.Column="2" Grid.RowSpan="2" Background="White" Margin="10"></StackPanel>
+                    <StackPanel Grid.Column="0" Grid.Row="0" Background="White" Margin="20,10,10,10" Grid.RowSpan="2">
+                        <Label HorizontalAlignment="Center" FontSize="20" Foreground="#666666">Most Calories Burned</Label>
+                        <Separator/>
+                        <ListBox Name="calorieList"></ListBox>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Grid.Row="0" Background="White" Margin="10,10,10,10" Grid.RowSpan="2">
+                        <Label HorizontalAlignment="Center" FontSize="20" Foreground="#666666">Longest Distance</Label>
+                        <Separator/>
+                        <ListBox Name="distanceList"></ListBox>
+                    </StackPanel>
+                    <StackPanel Grid.Column="2" Grid.RowSpan="2" Background="White" Margin="10,10,20,10">
+                        <Label HorizontalAlignment="Center" FontSize="20" Foreground="#666666">Top Performers</Label>
+                        <Separator/>
+                        <ListBox Name="performersList"></ListBox>
+                    </StackPanel>
                 </Grid>
             </StackPanel>
         </Grid>

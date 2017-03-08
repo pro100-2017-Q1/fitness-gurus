@@ -35,6 +35,10 @@ namespace FitnessTracker
             SmartWatch sw = new SmartWatch();
 
             Activities.ItemsSource = activityLog;
+
+            getTopCalories();
+            getTopDistance();
+            getTopPerformers();
         }
 
         private async void Import_Click(object sender, RoutedEventArgs e)
@@ -103,6 +107,7 @@ namespace FitnessTracker
 
         }
 
+
         private void SortByDate_Selected(object sender, RoutedEventArgs e)
         {
             (Activities.ItemsSource as DataView).Sort = "Date";
@@ -120,6 +125,18 @@ namespace FitnessTracker
         private void SortByDistance_Selected(object sender, RoutedEventArgs e)
         {
 
+        }
+        public void getTopCalories()
+        {
+            calorieList.Items.Add("joe");
+        }
+        public void getTopDistance()
+        {
+            distanceList.Items.Add("kevin");
+        }
+        public void getTopPerformers()
+        {
+            performersList.Items.Add("mary");
         }
     }
 
