@@ -35,10 +35,13 @@ namespace FitnessTracker
                     {
                         file.WriteLine(tbxUsername.Text);
                         file.WriteLine(passwordtbx);
-                        file.WriteLine(nametbx.Text);
+                        
                         Profile p = new Profile();
+                        p.username = tbxUsername.Text;
                         p.Show();
+                        file.Close();
                         this.Close();
+                        
                     }
                 }
             }
