@@ -22,7 +22,7 @@ namespace FitnessTracker
     /// </summary>
     public partial class Profile : Window
     {
-        
+        public string username;
         public Profile()
         {
             InitializeComponent();
@@ -48,7 +48,7 @@ namespace FitnessTracker
 
         private void saveButton_Click_1(object sender, RoutedEventArgs e)
         {
-            System.IO.StreamWriter file = new System.IO.StreamWriter(nameBox.Text + ".txt", true);
+            System.IO.StreamWriter file = new System.IO.StreamWriter(username + ".txt", true);
             Boolean weightAccepted = false;
             Boolean HeightAccepted = false;
             if (weightBox != null)
@@ -71,11 +71,8 @@ namespace FitnessTracker
         }
         private void saveButton2_Click(object sender, RoutedEventArgs e)
         {
-            if (File.Exists(nameBox.Text + ".txt"))
-            {
-                File.Delete(nameBox.Text + ".txt");
-            }
-            System.IO.StreamWriter file = new System.IO.StreamWriter(nameBox.Text + ".txt", true);
+
+            StreamWriter file = new System.IO.StreamWriter(username + ".txt", true);
             Boolean ageAccepted = false;
             string ageRegex = "([0-9]+)";
             Regex ageR = new Regex(ageRegex);

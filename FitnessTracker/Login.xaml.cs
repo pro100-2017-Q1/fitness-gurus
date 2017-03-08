@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,27 +20,35 @@ namespace FitnessTracker
     /// </summary>
     public partial class Login : Window
     {
+        CreateAccount create = new CreateAccount();
         public Login()
         {
             InitializeComponent();
         }
+
         private void loginButtonChanged_Click(object sender, RoutedEventArgs e)
         {
-            // if username and password are correct goes to other pages
-            // if username and password are incorrect, makes you try again
             MainWindow main = new MainWindow();
             main.Show();
             this.Close();
+          
+                // check sql to see if it contains email and password given 
+                //string username = tbxUsername.Text;
+                //string password = tbxPassword.Password;
+                //SqlConnection connect = new SqlConnection();
+                //SqlCommand command = new SqlCommand();
+               
+            
         }
-        private void tbxUsername_TextChanged(object sender, TextChangedEventArgs e)
+        private void tbxEmail_TextChanged(object sender, TextChangedEventArgs e)
         {
             // username: maximum 8 
         }
-        private void tbxUsername_GotFocus(object sender, RoutedEventArgs e)
+        private void tbx_GotFocus(object sender, RoutedEventArgs e)
         {
             TextBox tbx = (TextBox)sender;
             tbx.Text = string.Empty;
-            tbx.GotFocus -= tbxUsername_GotFocus;
+            tbx.GotFocus -= tbx_GotFocus;
         }
         private void tbxPassword_PasswordChanged(object sender, RoutedEventArgs e)
         {
@@ -51,11 +60,16 @@ namespace FitnessTracker
 
         }
 
-        private void newUserLabel_Click(object sender, RoutedEventArgs e)
+        private void createAccountLabel_Click(object sender, RoutedEventArgs e)
         {
-            CreateAccount c = new FitnessTracker.CreateAccount();
-            c.Show();
-            this.Close();
+
         }
+
+        //private void newUserLabel_Click(object sender, RoutedEventArgs e)
+        //{
+        //    CreateAccount c = new FitnessTracker.CreateAccount();
+        //    c.Show();
+        //    this.Close();
+        //}
     }
 }
