@@ -26,7 +26,6 @@ namespace FitnessTracker
 
         private void registration_Click(object sender, RoutedEventArgs e)
         {
-<<<<<<< HEAD
             System.IO.StreamWriter file = new System.IO.StreamWriter(tbxUsername.Text + ".txt");
             if (tbxUsername.Text != "")
             {
@@ -50,7 +49,6 @@ namespace FitnessTracker
             {
                 tbxUsername.Text = "Put Something In";
             }
-=======
             //System.IO.StreamWriter file = new System.IO.StreamWriter(tbxUsername.Text + ".txt");
             //if (tbxUsername.Text != "")
             //{
@@ -71,7 +69,6 @@ namespace FitnessTracker
             //{
             //    tbxUsername.Text = "Put Something In";
             //}
->>>>>>> origin/master
         }
         private void tbx_GotFocus(object sender, RoutedEventArgs e)
         {
