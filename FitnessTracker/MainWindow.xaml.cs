@@ -1,4 +1,5 @@
-﻿using Smartwatch;
+﻿using Microsoft.Win32;
+using Smartwatch;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -37,7 +38,9 @@ namespace FitnessTracker
 
         private async void Import_Click(object sender, RoutedEventArgs e)
         {
-            await GetActivities();
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            while (openFileDialog.ShowDialog() != true) { } //wait for it to return
+            await GetActivities(openFileDialog.FileName);
         }
 
         private void Arrow_Click(object sender, RoutedEventArgs e)
@@ -63,11 +66,12 @@ namespace FitnessTracker
             Profile profile = new Profile();
             profile.Show();
         }
-        public async Task<byte> GetActivities()
+        public async Task<byte> GetActivities(string filename)
         {
             string pattern = @"([A-Za-z]+),([0-9]+),([0-9]+)";
             string input = "";
-            using (StreamReader sr = new StreamReader(Directory.GetCurrentDirectory() + "\\fitness_data.csv"))
+
+            using (StreamReader sr = new StreamReader(filename))
             {
                 input = await sr.ReadToEndAsync();
             }
