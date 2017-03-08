@@ -3,6 +3,7 @@ using Smartwatch;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -99,6 +100,25 @@ namespace FitnessTracker
         {
             ActivityLog.Visibility = Visibility.Hidden;
             Leaderboard.Visibility = Visibility.Visible;
+
+        }
+
+        private void SortByDate_Selected(object sender, RoutedEventArgs e)
+        {
+            (Activities.ItemsSource as DataView).Sort = "Date";
+        }
+        private void SortByType_Selected(object sender, RoutedEventArgs e)
+        {
+            (Activities.ItemsSource as DataView).Sort = "Activity";
+        }
+
+        private void SortByCalories_Selected(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SortByDistance_Selected(object sender, RoutedEventArgs e)
+        {
 
         }
     }

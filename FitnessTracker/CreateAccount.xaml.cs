@@ -54,5 +54,9 @@ namespace FitnessTracker
             tbx.GotFocus -= tbx_GotFocus;
         }
 
+        private void tbxPassword_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
