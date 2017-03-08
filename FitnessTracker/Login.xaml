@@ -39,10 +39,7 @@
                 VerticalAlignment="Top" Width="70" Click="loginButtonChanged_Click" Background="#2FC191"
                 BorderBrush="White" Foreground="White" Height="27" Grid.Row="2" Grid.Column="2"/>
 
-        <Button x:Name="newUserLabel" Content="New User" Margin="179.8,111.8,55.6,16.6"
-                Background="Transparent" BorderBrush="Transparent" 
-                Foreground="White" RenderTransformOrigin="1.15,0.603" Grid.Column="2" Grid.Row="2" Click="newUserLabel_Click" Visibility="Hidden"/>
-     
+
         <Image Source="media/simplyFit.png" Margin="37.8,13,55.6,37.2" Grid.RowSpan="2" Grid.Column="2"/>
         
         <Button x:Name="createAccountLabel" Content="New Account" Margin="107.8,126.8,34.6,35.6" 
