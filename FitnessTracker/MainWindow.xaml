@@ -33,12 +33,7 @@
                     Orientation="Vertical"
                       Background="#666666" >
                 <StackPanel Orientation="Horizontal">
-                    <ComboBox Width="125" Height="25" Margin="10" x:Name="SortBy" SelectedIndex="0">
-                        <ComboBoxItem Content="Date" Selected="SortByDate_Selected"/>
-                        <ComboBoxItem Content="Activity Type" Selected="SortByType_Selected"/>
-                        <ComboBoxItem Content="Calories" Selected="SortByCalories_Selected"/>
-                        <ComboBoxItem Content="Distance" Selected="SortByDistance_Selected"/>
-                    </ComboBox>
+                    <ComboBox Width="125" Height="25" Margin="10" x:Name="SortBy" Visibility="Hidden"/>
                     <Label Width="550" 
                        HorizontalContentAlignment="Center"
                        Foreground="White"
@@ -62,7 +57,7 @@
                     </DataGrid.ColumnHeaderStyle>
 
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Date"     Width="200" Binding="{Binding Date}" />
+                        <DataGridTextColumn Header="Date"     Width="200" Binding="{Binding Date}"/>
                         <DataGridTextColumn Header="Activity" Width="200" Binding="{Binding Type}" />
                         <DataGridTextColumn Header="Calories" Width="200" Binding="{Binding Calories}" />
                         <DataGridTextColumn Header="Distance" Width="200" Binding="{Binding Distance}" />

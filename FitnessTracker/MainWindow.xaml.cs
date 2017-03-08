@@ -44,8 +44,11 @@ namespace FitnessTracker
         private async void Import_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            while (openFileDialog.ShowDialog() != true) { } //wait for it to return
-            await GetActivities(openFileDialog.FileName);
+            openFileDialog.ShowDialog();
+            if (openFileDialog.FileName.Length > 0)
+            {
+                await GetActivities(openFileDialog.FileName);
+            }
         }
 
         private void Arrow_Click(object sender, RoutedEventArgs e)
@@ -107,25 +110,6 @@ namespace FitnessTracker
 
         }
 
-
-        private void SortByDate_Selected(object sender, RoutedEventArgs e)
-        {
-            (Activities.ItemsSource as DataView).Sort = "Date";
-        }
-        private void SortByType_Selected(object sender, RoutedEventArgs e)
-        {
-            (Activities.ItemsSource as DataView).Sort = "Activity";
-        }
-
-        private void SortByCalories_Selected(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void SortByDistance_Selected(object sender, RoutedEventArgs e)
-        {
-
-        }
         public void getTopCalories()
         {
             calorieList.Items.Add("joe");
@@ -138,6 +122,7 @@ namespace FitnessTracker
         {
             performersList.Items.Add("mary");
         }
+        
     }
 
 }
