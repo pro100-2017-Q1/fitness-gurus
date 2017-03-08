@@ -29,12 +29,12 @@ namespace FitnessTracker
             System.IO.StreamWriter file = new System.IO.StreamWriter(tbxUsername.Text + ".txt");
             if (tbxUsername.Text != "")
             {
-                if(passwordtbx != null)
+                if(tbxPassword != null)
                 {
-                    if (nametbx.Text != "")
+                    if (tbxFirstName.Text != "")
                     {
                         file.WriteLine(tbxUsername.Text);
-                        file.WriteLine(passwordtbx);
+                        file.WriteLine(tbxPassword);
                         
                         Profile p = new Profile();
                         p.username = tbxUsername.Text;
