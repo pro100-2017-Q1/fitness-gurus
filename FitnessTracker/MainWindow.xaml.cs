@@ -33,6 +33,10 @@ namespace FitnessTracker
             SmartWatch sw = new SmartWatch();
 
             Activities.ItemsSource = activityLog;
+
+            getTopCalories();
+            getTopDistance();
+            getTopPerformers();
         }
 
         private async void Import_Click(object sender, RoutedEventArgs e)
@@ -96,6 +100,19 @@ namespace FitnessTracker
             ActivityLog.Visibility = Visibility.Hidden;
             Leaderboard.Visibility = Visibility.Visible;
 
+        }
+
+        public void getTopCalories()
+        {
+            calorieList.Items.Add("joe");
+        }
+        public void getTopDistance()
+        {
+            distanceList.Items.Add("kevin");
+        }
+        public void getTopPerformers()
+        {
+            performersList.Items.Add("mary");
         }
     }
 
