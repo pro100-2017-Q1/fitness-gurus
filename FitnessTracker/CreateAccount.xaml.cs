@@ -50,7 +50,7 @@ namespace FitnessTracker
             }
             else
             {
-                tbxUsername.Text = "Put Something In";
+                tbxUsername.Text = "Enter a username";
             }
             //System.IO.StreamWriter file = new System.IO.StreamWriter(tbxUsername.Text + ".txt");
             //if (tbxUsername.Text != "")
