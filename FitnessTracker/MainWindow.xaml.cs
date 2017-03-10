@@ -33,6 +33,7 @@ namespace FitnessTracker
 
         ObservableCollection<CSVActivity> activityLog = new ObservableCollection<CSVActivity>();
 
+
         public MainWindow(Login loginPage)
         {
             InitializeComponent();
@@ -82,7 +83,7 @@ namespace FitnessTracker
         }
         public async Task<byte> GetActivities(string filename)
         {
-            System.IO.StreamWriter file = new StreamWriter(profile.username + "calories.txt");
+            System.IO.StreamWriter file = new StreamWriter(profile.username + "calories.txt", true);
             string[] splitInfo;
             string input = "";
 
@@ -94,8 +95,11 @@ namespace FitnessTracker
                     int cals = int.Parse(splitInfo[1]);
                     int dist = int.Parse(splitInfo[2]);
                     activityLog.Add(new CSVActivity(splitInfo[0], cals, dist));
-                    file.WriteLine(cals);
-                    file.WriteLine(dist);
+                    file.Write(cals.ToString());
+                    file.Write(dist.ToString());
+                    profile.calorietbx.Text += cals.ToString();
+                    profile.distanceBox.Text += dist.ToString();
+
                 }
             }
             return 0;
