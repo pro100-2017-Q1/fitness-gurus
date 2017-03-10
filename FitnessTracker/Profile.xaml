@@ -50,7 +50,7 @@
             <Border Grid.Row="1" Background="#666666"></Border>
 
             <Label FontSize="40" Grid.Row="2" Foreground="#2FC191" Margin="10,17,733.6,217.8" Width="350">Today's Statistics</Label>
-            <StackPanel Orientation="Horizontal" Grid.Row="2" Height="100" Margin="0,147,-0.4,77.8">
+            <StackPanel Orientation="Horizontal" Grid.Row="2" Height="100" Margin="0,103,0,122">
                 <StackPanel Margin="100 0 0 0">
                     <Label FontSize="20" Foreground="#666666" VerticalAlignment="Center">Weight</Label>
                     <TextBox Name="weightBox" Width="100" Height="30" VerticalAlignment="Center" FontSize="20" Foreground="#666666">200</TextBox>
@@ -70,6 +70,18 @@
 
             <Border Grid.Row="3" Background="#666666"></Border>
             <Button x:Name="saveButton2" Foreground="White" Background="#2FC191" FontSize="15" Height="30" Click="saveButton2_Click" Content="Update Profile" Margin="848,321,45.6,41.8" Width="200"/>
+            <StackPanel Orientation="Horizontal" Grid.Row="2" Height="100" Margin="0,208,0,17">
+                <StackPanel Margin="100 0 0 0">
+                    <Label FontSize="20" Foreground="#666666" VerticalAlignment="Center" Content="Calories"/>
+                    <TextBox x:Name="calorietbx" Width="202" Height="30" VerticalAlignment="Center" FontSize="20" Foreground="#666666" Text="" IsReadOnly="True"/>
+                </StackPanel>
+                <StackPanel Margin="100 0 0 0">
+                    <Label FontSize="20" Foreground="#666666" VerticalAlignment="Center" Content="Distance"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox x:Name="distanceBox" Width="210" Height="30" VerticalAlignment="Center" FontSize="20" Foreground="#666666" Margin="5" Text="" IsReadOnly="True"/>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
         </Grid>
 
     </Grid>

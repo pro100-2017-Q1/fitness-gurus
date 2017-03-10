@@ -31,7 +31,10 @@ namespace FitnessTracker
         public Profile profile;
         //
 
+        SmartWatch sw;
+
         ObservableCollection<CSVActivity> activityLog = new ObservableCollection<CSVActivity>();
+
 
         public MainWindow(Login loginPage)
         {
@@ -39,7 +42,7 @@ namespace FitnessTracker
             login = loginPage;
             profile = new Profile(this);
 
-            SmartWatch sw = new SmartWatch();
+            sw = new SmartWatch();
 
             Activities.ItemsSource = activityLog;
 
@@ -82,22 +85,29 @@ namespace FitnessTracker
         }
         public async Task<byte> GetActivities(string filename)
         {
-            string pattern = @"([A-Za-z]+),([0-9]+),([0-9]+)";
+            System.IO.StreamWriter file = new StreamWriter(profile.username + "calories.txt", true);
+            string[] splitInfo;
             string input = "";
 
             using (StreamReader sr = new StreamReader(filename))
             {
-                input = await sr.ReadToEndAsync();
+                string calorie = null;
+                string distance = null;
+                while((input = await sr.ReadLineAsync()) != null)
+                {
+                    splitInfo = input.Split(',');
+                    int cals = int.Parse(splitInfo[1]);
+                    int dist = int.Parse(splitInfo[2]);
+                    activityLog.Add(new CSVActivity(splitInfo[0], cals, dist));
+                    profile.calorietbx.Text += cals.ToString();
+                    profile.distanceBox.Text += dist.ToString();
+                    calorie += cals.ToString();
+                    distance += dist.ToString();
+                }
+                file.Write(calorie);
+                file.Write(distance);
             }
-                                  
-            MatchCollection matches = Regex.Matches(input, pattern);
-
-            foreach (Match m in matches)
-            {
-                int cals = int.Parse(m.Groups[2].Value);
-                int dist = int.Parse(m.Groups[3].Value);
-                activityLog.Add(new CSVActivity(m.Groups[1].Value, cals, dist));
-            }
+            sw = new SmartWatch();
             return 0;
         }
 
