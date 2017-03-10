@@ -82,21 +82,18 @@ namespace FitnessTracker
         }
         public async Task<byte> GetActivities(string filename)
         {
-            string pattern = @"([A-Za-z]+),([0-9]+),([0-9]+)";
+            string[] splitInfo;
             string input = "";
 
             using (StreamReader sr = new StreamReader(filename))
             {
-                input = await sr.ReadToEndAsync();
-            }
-                                  
-            MatchCollection matches = Regex.Matches(input, pattern);
-
-            foreach (Match m in matches)
-            {
-                int cals = int.Parse(m.Groups[2].Value);
-                int dist = int.Parse(m.Groups[3].Value);
-                activityLog.Add(new CSVActivity(m.Groups[1].Value, cals, dist));
+                while((input = await sr.ReadLineAsync()) != null)
+                {
+                    splitInfo = input.Split(',');
+                    int cals = int.Parse(splitInfo[1]);
+                    int dist = int.Parse(splitInfo[2]);
+                    activityLog.Add(new CSVActivity(splitInfo[0], cals, dist));
+                }
             }
             return 0;
         }
