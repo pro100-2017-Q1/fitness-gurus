@@ -89,18 +89,21 @@ namespace FitnessTracker
 
             using (StreamReader sr = new StreamReader(filename))
             {
+                string calorie = null;
+                string distance = null;
                 while((input = await sr.ReadLineAsync()) != null)
                 {
                     splitInfo = input.Split(',');
                     int cals = int.Parse(splitInfo[1]);
                     int dist = int.Parse(splitInfo[2]);
                     activityLog.Add(new CSVActivity(splitInfo[0], cals, dist));
-                    file.Write(cals.ToString());
-                    file.Write(dist.ToString());
                     profile.calorietbx.Text += cals.ToString();
                     profile.distanceBox.Text += dist.ToString();
-
+                    calorie += cals.ToString();
+                    distance += dist.ToString();
                 }
+                file.Write(calorie);
+                file.Write(distance);
             }
             return 0;
         }
