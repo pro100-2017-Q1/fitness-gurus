@@ -19,9 +19,12 @@ namespace FitnessTracker
     /// </summary>
     public partial class CreateAccount : Window
     {
-        public CreateAccount()
+        Login login;
+
+        public CreateAccount(Login loginPage)
         {
             InitializeComponent();
+            login = loginPage;
         }
 
         private void registration_Click(object sender, RoutedEventArgs e)
@@ -36,18 +39,18 @@ namespace FitnessTracker
                         file.WriteLine(tbxUsername.Text);
                         file.WriteLine(tbxPassword);
                         
-                        Profile p = new Profile();
-                        p.username = tbxUsername.Text;
-                        p.Show();
+
+                        login.main.profile.username = tbxUsername.Text;
+                        login.main.profile.Show();
                         file.Close();
-                        this.Close();
+                        this.Hide();
                         
                     }
                 }
             }
             else
             {
-                tbxUsername.Text = "Put Something In";
+                tbxUsername.Text = "Enter a username";
             }
             //System.IO.StreamWriter file = new System.IO.StreamWriter(tbxUsername.Text + ".txt");
             //if (tbxUsername.Text != "")

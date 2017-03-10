@@ -22,15 +22,19 @@ namespace FitnessTracker
     /// </summary>
     public partial class Profile : Window
     {
+        MainWindow mainwindow;
+
         public string username;
-        public Profile()
+        public Profile(MainWindow activityWindow)
         {
             InitializeComponent();
+            mainwindow = activityWindow;
         }
 
         private void Home_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            mainwindow.Show();
+            this.Hide();
         }
 
         private void ProfilePicUpload(object sender, RoutedEventArgs e)
@@ -119,6 +123,14 @@ namespace FitnessTracker
                     }
                 }
             }
+        }
+
+        private void LogOut_Click(object sender, RoutedEventArgs e)
+        {
+            mainwindow.login.Show();
+            mainwindow.Hide();
+            mainwindow.profile.Hide();
+            this.Hide();
         }
     }
 }

@@ -26,11 +26,18 @@ namespace FitnessTracker
     /// </summary>
     public partial class MainWindow : Window
     {
+        //Don't close windows unless we're exiting the program just hide these ones
+        public Login login;
+        public Profile profile;
+        //
+
         ObservableCollection<CSVActivity> activityLog = new ObservableCollection<CSVActivity>();
 
-        public MainWindow()
+        public MainWindow(Login loginPage)
         {
             InitializeComponent();
+            login = loginPage;
+            profile = new Profile(this);
 
             SmartWatch sw = new SmartWatch();
 
@@ -71,7 +78,6 @@ namespace FitnessTracker
 
         private void Profile_Click(object sender, RoutedEventArgs e)
         {
-            Profile profile = new Profile();
             profile.Show();
         }
         public async Task<byte> GetActivities(string filename)
@@ -123,7 +129,13 @@ namespace FitnessTracker
         {
             performersList.Items.Add("mary");
         }
-        
+
+        private void LogOut_Click(object sender, RoutedEventArgs e)
+        {
+            login.Show();
+            profile.Hide();
+            this.Hide();
+        }
     }
 
 }

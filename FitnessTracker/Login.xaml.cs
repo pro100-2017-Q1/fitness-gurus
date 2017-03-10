@@ -20,17 +20,20 @@ namespace FitnessTracker
     /// </summary>
     public partial class Login : Window
     {
-        CreateAccount create = new CreateAccount();
+
+        public CreateAccount create;
+        public MainWindow main;
         public Login()
         {
             InitializeComponent();
+            create = new CreateAccount(this);
+            main = new MainWindow(this);
         }
 
         private void loginButtonChanged_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow main = new MainWindow();
             main.Show();
-            this.Close();
+            this.Hide();
           
                 // check sql to see if it contains email and password given 
                 //string username = tbxUsername.Text;
@@ -62,7 +65,8 @@ namespace FitnessTracker
 
         private void createAccountLabel_Click(object sender, RoutedEventArgs e)
         {
-
+            create.Show();
+            this.Hide();
         }
 
         //private void newUserLabel_Click(object sender, RoutedEventArgs e)
