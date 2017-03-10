@@ -82,6 +82,7 @@ namespace FitnessTracker
         }
         public async Task<byte> GetActivities(string filename)
         {
+            System.IO.StreamWriter file = new StreamWriter(profile.username + "calories.txt");
             string[] splitInfo;
             string input = "";
 
@@ -93,6 +94,8 @@ namespace FitnessTracker
                     int cals = int.Parse(splitInfo[1]);
                     int dist = int.Parse(splitInfo[2]);
                     activityLog.Add(new CSVActivity(splitInfo[0], cals, dist));
+                    file.WriteLine(cals);
+                    file.WriteLine(dist);
                 }
             }
             return 0;
