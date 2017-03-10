@@ -19,38 +19,39 @@ namespace FitnessTracker
     /// </summary>
     public partial class CreateAccount : Window
     {
-        public CreateAccount()
+        Login login;
+
+        public CreateAccount(Login loginPage)
         {
             InitializeComponent();
+            login = loginPage;
         }
 
         private void registration_Click(object sender, RoutedEventArgs e)
         {
-<<<<<<< HEAD
             System.IO.StreamWriter file = new System.IO.StreamWriter(tbxUsername.Text + ".txt");
             if (tbxUsername.Text != "")
             {
-                if(passwordtbx != null)
+                if(tbxPassword != null)
                 {
-                    if (nametbx.Text != "")
+                    if (tbxFirstName.Text != "")
                     {
                         file.WriteLine(tbxUsername.Text);
-                        file.WriteLine(passwordtbx);
+                        file.WriteLine(tbxPassword);
                         
-                        Profile p = new Profile();
-                        p.username = tbxUsername.Text;
-                        p.Show();
+
+                        login.main.profile.username = tbxUsername.Text;
+                        login.main.profile.Show();
                         file.Close();
-                        this.Close();
+                        this.Hide();
                         
                     }
                 }
             }
             else
             {
-                tbxUsername.Text = "Put Something In";
+                tbxUsername.Text = "Enter a username";
             }
-=======
             //System.IO.StreamWriter file = new System.IO.StreamWriter(tbxUsername.Text + ".txt");
             //if (tbxUsername.Text != "")
             //{
@@ -71,7 +72,6 @@ namespace FitnessTracker
             //{
             //    tbxUsername.Text = "Put Something In";
             //}
->>>>>>> origin/master
         }
         private void tbx_GotFocus(object sender, RoutedEventArgs e)
         {
@@ -80,5 +80,9 @@ namespace FitnessTracker
             tbx.GotFocus -= tbx_GotFocus;
         }
 
+        private void tbxPassword_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

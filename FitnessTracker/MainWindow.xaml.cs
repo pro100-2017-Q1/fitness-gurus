@@ -3,6 +3,7 @@ using Smartwatch;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -25,22 +26,39 @@ namespace FitnessTracker
     /// </summary>
     public partial class MainWindow : Window
     {
+        //Don't close windows unless we're exiting the program just hide these ones
+        public Login login;
+        public Profile profile;
+        //
+
+        SmartWatch sw;
+
         ObservableCollection<CSVActivity> activityLog = new ObservableCollection<CSVActivity>();
 
-        public MainWindow()
+
+        public MainWindow(Login loginPage)
         {
             InitializeComponent();
+            login = loginPage;
+            profile = new Profile(this);
 
-            SmartWatch sw = new SmartWatch();
+            sw = new SmartWatch();
 
             Activities.ItemsSource = activityLog;
+
+            getTopCalories();
+            getTopDistance();
+            getTopPerformers();
         }
 
         private async void Import_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            while (openFileDialog.ShowDialog() != true) { } //wait for it to return
-            await GetActivities(openFileDialog.FileName);
+            openFileDialog.ShowDialog();
+            if (openFileDialog.FileName.Length > 0)
+            {
+                await GetActivities(openFileDialog.FileName);
+            }
         }
 
         private void Arrow_Click(object sender, RoutedEventArgs e)
@@ -63,27 +81,33 @@ namespace FitnessTracker
 
         private void Profile_Click(object sender, RoutedEventArgs e)
         {
-            Profile profile = new Profile();
             profile.Show();
         }
         public async Task<byte> GetActivities(string filename)
         {
-            string pattern = @"([A-Za-z]+),([0-9]+),([0-9]+)";
+            System.IO.StreamWriter file = new StreamWriter(profile.username + "calories.txt", true);
+            string[] splitInfo;
             string input = "";
 
             using (StreamReader sr = new StreamReader(filename))
             {
-                input = await sr.ReadToEndAsync();
+                string calorie = null;
+                string distance = null;
+                while((input = await sr.ReadLineAsync()) != null)
+                {
+                    splitInfo = input.Split(',');
+                    int cals = int.Parse(splitInfo[1]);
+                    int dist = int.Parse(splitInfo[2]);
+                    activityLog.Add(new CSVActivity(splitInfo[0], cals, dist));
+                    profile.calorietbx.Text += cals.ToString();
+                    profile.distanceBox.Text += dist.ToString();
+                    calorie += cals.ToString();
+                    distance += dist.ToString();
+                }
+                file.Write(calorie);
+                file.Write(distance);
             }
-                                  
-            MatchCollection matches = Regex.Matches(input, pattern);
-
-            foreach (Match m in matches)
-            {
-                int cals = int.Parse(m.Groups[2].Value);
-                int dist = int.Parse(m.Groups[3].Value);
-                activityLog.Add(new CSVActivity(m.Groups[1].Value, cals, dist));
-            }
+            sw = new SmartWatch();
             return 0;
         }
 
@@ -100,6 +124,26 @@ namespace FitnessTracker
             ActivityLog.Visibility = Visibility.Hidden;
             Leaderboard.Visibility = Visibility.Visible;
 
+        }
+
+        public void getTopCalories()
+        {
+            calorieList.Items.Add("joe");
+        }
+        public void getTopDistance()
+        {
+            distanceList.Items.Add("kevin");
+        }
+        public void getTopPerformers()
+        {
+            performersList.Items.Add("mary");
+        }
+
+        private void LogOut_Click(object sender, RoutedEventArgs e)
+        {
+            login.Show();
+            profile.Hide();
+            this.Hide();
         }
     }
 
