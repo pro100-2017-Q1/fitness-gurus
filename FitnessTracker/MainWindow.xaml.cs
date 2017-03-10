@@ -76,6 +76,7 @@ namespace FitnessTracker
         }
         public async Task<byte> GetActivities(string filename)
         {
+            
             string pattern = @"([A-Za-z]+),([0-9]+),([0-9]+)";
             string input = "";
 
