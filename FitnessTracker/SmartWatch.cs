@@ -71,7 +71,7 @@ namespace Smartwatch
     {
         public SmartWatch()
         {
-            ActivityLogGenerator.GenerateActivityLog("fitness_data.csv", 120);
+            ActivityLogGenerator.GenerateActivityLog("fitness_data.csv", 12);
         }
 
     }

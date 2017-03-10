@@ -31,6 +31,8 @@ namespace FitnessTracker
         public Profile profile;
         //
 
+        SmartWatch sw;
+
         ObservableCollection<CSVActivity> activityLog = new ObservableCollection<CSVActivity>();
 
 
@@ -40,7 +42,7 @@ namespace FitnessTracker
             login = loginPage;
             profile = new Profile(this);
 
-            SmartWatch sw = new SmartWatch();
+            sw = new SmartWatch();
 
             Activities.ItemsSource = activityLog;
 
@@ -105,6 +107,7 @@ namespace FitnessTracker
                 file.Write(calorie);
                 file.Write(distance);
             }
+            sw = new SmartWatch();
             return 0;
         }
 
