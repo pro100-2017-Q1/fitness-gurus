@@ -75,5 +75,10 @@ namespace FitnessTracker
         //    c.Show();
         //    this.Close();
         //}
+
+        public void LogOut()
+        {
+            main = new MainWindow(this);
+        }
     }
 }
