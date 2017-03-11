@@ -62,7 +62,7 @@
                         <TextBox Name="inchBox" Width="50" Height="30" VerticalAlignment="Center" FontSize="20" Foreground="#666666">4</TextBox>
                     </StackPanel>
                 </StackPanel>
-                <Button Name="saveButton" Foreground="White" Background="#2FC191" FontSize="15" Width="200" Margin="60,30,0,40" Click="saveButton_Click_1">Upload Activity File</Button>
+                <Button Name="saveButton" Foreground="White" Background="#2FC191" FontSize="15" Width="200" Margin="60,30,0,40" Click="saveButton_Click_1" Visibility="Hidden">Upload Activity File</Button>
             </StackPanel>
 
 
