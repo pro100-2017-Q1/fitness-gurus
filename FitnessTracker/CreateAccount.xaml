@@ -14,49 +14,53 @@
                 <RowDefinition Height="191*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="13*"/>
-                <ColumnDefinition Width="0*"/>
-                <ColumnDefinition Width="131*"/>
+                <ColumnDefinition Width="55*"/>
+                <ColumnDefinition Width="718*"/>
             </Grid.ColumnDefinitions>
 
-            <TextBox x:Name="tbxUsername" HorizontalAlignment="Left" Height="27" Margin="89.4,66.4,0,0"
+            <TextBox x:Name="tbxUsername" HorizontalAlignment="Left" Height="27" Margin="89.8,66.4,0,0"
                 TextWrapping="Wrap" Text="Username" GotFocus="tbx_GotFocus" VerticalAlignment="Top"
+<<<<<<< HEAD
                 Width="225" Foreground="Gray" Grid.Row="2" Grid.Column="2"
                 FontSize="13" MaxLength="25"/>
+=======
+                Width="225" Foreground="Gray" Grid.Row="2" Grid.Column="1"
+                FontSize="13"/>
+>>>>>>> origin/master
 
-            <PasswordBox x:Name="tbxPassword" HorizontalAlignment="Left" Height="27" Margin="210.4,116.4,0,0"
-                  VerticalAlignment="Top" Width="225"  Foreground="Gray" Grid.Row="2" Grid.Column="2"
+            <PasswordBox x:Name="tbxPassword" HorizontalAlignment="Left" Height="27" Margin="210.8,116.4,0,0"
+                  VerticalAlignment="Top" Width="225"  Foreground="Gray" Grid.Row="2" Grid.Column="1"
                   PasswordChar="*" MaxLength="8" PasswordChanged="tbxPassword_PasswordChanged"/>
 
-            <Button x:Name="createbtn" Content="Join" HorizontalAlignment="Left" Margin="271.4,166.4,0,0"
+            <Button x:Name="createbtn" Content="Join" HorizontalAlignment="Left" Margin="271.8,166.4,0,0"
                 VerticalAlignment="Top" Width="94" Background="#2FC191"
-                BorderBrush="White" Foreground="White" Height="27" Grid.Row="2" Grid.Column="2" Click="registration_Click"/>
+                BorderBrush="White" Foreground="White" Height="27" Grid.Row="2" Grid.Column="1" Click="registration_Click"/>
 
-            <Image Source="media/simplyFit.png" Margin="210.4,10,268.6,24.6" Grid.RowSpan="2" Grid.Column="2"/>
+            <Image Source="media/simplyFit.png" Margin="210.8,10,191.6,24.6" Grid.RowSpan="2" Grid.Column="1"/>
 
-            <Label x:Name="createlbl" Content="Registration" Grid.Column="2" HorizontalAlignment="Left" 
-                   Margin="260.4,122,0,0" Grid.RowSpan="3" VerticalAlignment="Top" 
+            <Label x:Name="createlbl" Content="Registration" Grid.Column="1" HorizontalAlignment="Left" 
+                   Margin="260.8,122,0,0" Grid.RowSpan="3" VerticalAlignment="Top" 
                    Height="48" Width="140" FontSize="24" Foreground="White" />
 
-               <!-- Assuming that the textbox below is like name for user? 
+            <!-- Assuming that the textbox below is like name for user? 
                         // Sidenote: maybe have more requirements for signing up.
                                 Like email and full name? (might even help us create a "forgot" 
                                         password section as a stretch goal -->
-            <TextBox x:Name="tbxFirstName" Grid.Column="2" HorizontalAlignment="Left" Height="27" 
-                     Margin="89.4,13.4,0,0" TextWrapping="Wrap" Text="First Name" 
+            <TextBox x:Name="tbxFirstName" Grid.Column="1" HorizontalAlignment="Left" Height="27" 
+                     Margin="89.8,13.4,0,0" TextWrapping="Wrap" Text="First Name" 
                      GotFocus="tbx_GotFocus" Foreground="Gray"
                      VerticalAlignment="Top" Width="225" Grid.Row="2"/>
 
-            <TextBox x:Name="tbxLastName" Grid.Column="2" HorizontalAlignment="Left" Height="27" 
-                     Margin="335.4,13.4,0,0" TextWrapping="Wrap" Text="Last Name" 
+            <TextBox x:Name="tbxLastName" Grid.Column="1" HorizontalAlignment="Left" Height="27" 
+                     Margin="335.8,13.4,0,0" TextWrapping="Wrap" Text="Last Name" 
                      GotFocus="tbx_GotFocus" Foreground="Gray"
                      VerticalAlignment="Top" Width="225" Grid.Row="2"/>
-            
-            <TextBox x:Name="tbxEmail" HorizontalAlignment="Left" Height="27" Margin="335.4,66.4,0,0"
+
+            <TextBox x:Name="tbxEmail" HorizontalAlignment="Left" Height="27" Margin="335.8,66.4,0,0"
                 TextWrapping="Wrap" Text="Email" GotFocus="tbx_GotFocus" VerticalAlignment="Top"
-                Width="225" Foreground="Gray" Grid.Row="2" Grid.Column="2"
+                Width="225" Foreground="Gray" Grid.Row="2" Grid.Column="1"
                 FontSize="13"/>
-
+            <TextBlock x:Name="tbxError" Foreground="Black" Margin="0,0,4.6,161.6" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
         </Grid>
 
     </Grid>
