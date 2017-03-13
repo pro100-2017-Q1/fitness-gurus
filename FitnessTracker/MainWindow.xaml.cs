@@ -118,15 +118,15 @@ namespace FitnessTracker
 
         public void getTopCalories()
         {
-            calorieList.Items.Add("joe");
+            calorieList.Items.Add("Joe");
         }
         public void getTopDistance()
         {
-            distanceList.Items.Add("kevin");
+            distanceList.Items.Add("Kevin");
         }
         public void getTopPerformers()
         {
-            performersList.Items.Add("mary");
+            performersList.Items.Add("Mary");
         }
 
         private void LogOut_Click(object sender, RoutedEventArgs e)
