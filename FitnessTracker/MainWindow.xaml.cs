@@ -76,6 +76,7 @@ namespace FitnessTracker
             int.TryParse(profile.calorietbx.Text, out calories);
             int.TryParse(profile.distanceBox.Text, out distance);
             StreamWriter file = new System.IO.StreamWriter(profile.username + "calories.txt");
+            StreamWriter file2 = new System.IO.StreamWriter("leaderboard.txt", true);
             string[] splitInfo;
             string input = "";
 
@@ -96,6 +97,10 @@ namespace FitnessTracker
             file.WriteLine(calories);
             file.WriteLine(distance);
             file.Close();
+            file2.WriteLine(profile.username + ":");
+            file2.WriteLine(calories);
+            file2.WriteLine(distance);
+            file2.Close();
             profile.calorietbx.Text = calories.ToString();
             profile.distanceBox.Text = distance.ToString();
 
