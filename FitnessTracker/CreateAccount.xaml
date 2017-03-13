@@ -18,15 +18,11 @@
                 <ColumnDefinition Width="718*"/>
             </Grid.ColumnDefinitions>
 
-            <TextBox x:Name="tbxUsername" HorizontalAlignment="Left" Height="27" Margin="89.8,66.4,0,0"
+            <TextBox x:Name="tbxUsername" HorizontalAlignment="Left" Height="27" Margin="90,66,0,0"
                 TextWrapping="Wrap" Text="Username" GotFocus="tbx_GotFocus" VerticalAlignment="Top"
-<<<<<<< HEAD
-                Width="225" Foreground="Gray" Grid.Row="2" Grid.Column="2"
-                FontSize="13" MaxLength="25"/>
-=======
                 Width="225" Foreground="Gray" Grid.Row="2" Grid.Column="1"
-                FontSize="13"/>
->>>>>>> origin/master
+                FontSize="13" MaxLength="25"/>
+
 
             <PasswordBox x:Name="tbxPassword" HorizontalAlignment="Left" Height="27" Margin="210.8,116.4,0,0"
                   VerticalAlignment="Top" Width="225"  Foreground="Gray" Grid.Row="2" Grid.Column="1"
