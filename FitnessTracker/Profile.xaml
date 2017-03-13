@@ -62,7 +62,7 @@
                         <TextBox Name="inchBox" Width="50" Height="30" VerticalAlignment="Center" FontSize="20" Foreground="#666666">4</TextBox>
                     </StackPanel>
                 </StackPanel>
-                <Button Name="saveButton" Foreground="White" Background="#2FC191" FontSize="15" Width="200" Margin="60,30,0,40" Click="saveButton_Click_1">Upload Activity File</Button>
+                <Button Name="saveButton" Foreground="White" Background="#2FC191" FontSize="15" Width="200" Margin="60,30,0,40" Click="saveButton_Click_1" Visibility="Hidden">Upload Activity File</Button>
             </StackPanel>
 
 
@@ -73,12 +73,12 @@
             <StackPanel Orientation="Horizontal" Grid.Row="2" Height="100" Margin="0,208,0,17">
                 <StackPanel Margin="100 0 0 0">
                     <Label FontSize="20" Foreground="#666666" VerticalAlignment="Center" Content="Calories"/>
-                    <TextBox x:Name="calorietbx" Width="202" Height="30" VerticalAlignment="Center" FontSize="20" Foreground="#666666" Text="" IsReadOnly="True"/>
+                    <TextBox x:Name="calorietbx" Width="202" Height="30" VerticalAlignment="Center" FontSize="20" Foreground="#666666" IsReadOnly="True" Text="{Binding Path=calories}"/>
                 </StackPanel>
                 <StackPanel Margin="100 0 0 0">
                     <Label FontSize="20" Foreground="#666666" VerticalAlignment="Center" Content="Distance"/>
                     <StackPanel Orientation="Horizontal">
-                        <TextBox x:Name="distanceBox" Width="210" Height="30" VerticalAlignment="Center" FontSize="20" Foreground="#666666" Margin="5" Text="" IsReadOnly="True"/>
+                        <TextBox x:Name="distanceBox" Width="210" Height="30" VerticalAlignment="Center" FontSize="20" Foreground="#666666" Margin="5" IsReadOnly="True" Text="{Binding Path=username}"/>
                     </StackPanel>
                 </StackPanel>
             </StackPanel>

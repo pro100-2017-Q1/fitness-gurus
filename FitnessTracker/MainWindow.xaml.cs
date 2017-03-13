@@ -1,23 +1,9 @@
 ﻿using Microsoft.Win32;
 using Smartwatch;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Data;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace FitnessTracker
 {
@@ -85,29 +71,33 @@ namespace FitnessTracker
         }
         public async Task<byte> GetActivities(string filename)
         {
-            System.IO.StreamWriter file = new StreamWriter(profile.username + "calories.txt", true);
+            int calories = 0; 
+            int distance = 0;
+            int.TryParse(profile.calorietbx.Text, out calories);
+            int.TryParse(profile.distanceBox.Text, out distance);
+            StreamWriter file = new StreamWriter(profile.username + "calories.txt", true);
             string[] splitInfo;
             string input = "";
 
             using (StreamReader sr = new StreamReader(filename))
             {
-                string calorie = null;
-                string distance = null;
                 while((input = await sr.ReadLineAsync()) != null)
                 {
                     splitInfo = input.Split(',');
                     int cals = int.Parse(splitInfo[1]);
                     int dist = int.Parse(splitInfo[2]);
                     activityLog.Add(new CSVActivity(splitInfo[0], cals, dist));
-                    profile.calorietbx.Text += cals.ToString();
-                    profile.distanceBox.Text += dist.ToString();
-                    calorie += cals.ToString();
-                    distance += dist.ToString();
+                    calories += cals;
+                    distance += dist;
                 }
-                file.Write(calorie);
-                file.Write(distance);
             }
             sw = new SmartWatch();
+
+            profile.calorietbx.Text = calories.ToString();
+            profile.distanceBox.Text = distance.ToString();
+            file.Write(calories);
+            file.Write(distance);
+
             return 0;
         }
 
@@ -141,9 +131,10 @@ namespace FitnessTracker
 
         private void LogOut_Click(object sender, RoutedEventArgs e)
         {
-            login.Show();
             profile.Hide();
             this.Hide();
+            login.LogOut();
+            login.Show();
         }
     }
 

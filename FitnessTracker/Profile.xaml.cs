@@ -130,6 +130,7 @@ namespace FitnessTracker
             mainwindow.login.Show();
             mainwindow.Hide();
             mainwindow.profile.Hide();
+            mainwindow.login.LogOut();
             this.Hide();
         }
     }
