@@ -60,9 +60,6 @@ namespace FitnessTracker
 
                 activity.Activities.ItemsSource = activityLog;
 
-                //getTopCalories();
-                //getTopDistance();
-                //getTopPerformers();
             }
             if (tbxEmail.Text == "danim@gmail.com")
             {
