@@ -9,7 +9,7 @@
     <Grid>
         <StackPanel x:Name="ActivityPanel"
                     Orientation="Vertical"
-                      Background="#666666" >
+                      Background="#666666" Margin="0,0,-0.4,0.4" RenderTransformOrigin="0.565,0.5" >
             <StackPanel Orientation="Horizontal">
                 <ComboBox Width="125" Height="25" Margin="10"/>
                 <Label Width="550" 

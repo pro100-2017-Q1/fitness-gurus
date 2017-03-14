@@ -67,20 +67,22 @@ namespace FitnessTracker
                 string email = tbxEmail.Text;
                 string password = tbxPassword.Password;
                 string username = tbxUsername.Text;
+
                // connection = new SqlConnection();
-                data = new SqlDataAdapter();
-                set = new DataSet();
-               // command = new SqlCommand();
-                connection = new SqlConnection("Data Source=Saving;Initial Catalog=Data;User ID=sa;Password=wintellect");
-                connection.Open();
-                command = new SqlCommand("Insert into CreateAcc (Username,Password,Address) values('" 
-                                                                    + email + "','" + password + "')", connection);
-                command.CommandType = CommandType.Text;
-                command.ExecuteNonQuery();
-                connection.Close();
-                tbxError.Text = "You have joined successfully.";
+               // data = new SqlDataAdapter();
+               // set = new DataSet();
+               //// command = new SqlCommand();
+               // connection = new SqlConnection("Data Source=Saving;Initial Catalog=Data;User ID=1;Password=tester123");
+               // connection.Open();
+               // command = new SqlCommand("Insert into CreateAcc (Username,Password,Address) values('" 
+               //                                                     + email + "','" + password + "')", connection);
+               // command.CommandType = CommandType.Text;
+               // command.ExecuteNonQuery();
+               // connection.Close();
+               // tbxError.Text = "You have joined successfully.";
 
             }
+
 
             }
         private void tbx_GotFocus(object sender, RoutedEventArgs e)

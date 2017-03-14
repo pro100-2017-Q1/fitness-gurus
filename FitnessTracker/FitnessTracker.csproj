@@ -58,6 +58,7 @@
     <Compile Include="CreateAccount.xaml.cs">
       <DependentUpon>CreateAccount.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseConnection.cs" />
     <Compile Include="SmartWatch.cs" />
     <Page Include="ActivityLog.xaml">
       <SubType>Designer</SubType>

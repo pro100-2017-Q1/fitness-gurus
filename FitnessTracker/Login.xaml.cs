@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Smartwatch;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,15 @@ namespace FitnessTracker
 
         public CreateAccount create;
         public MainWindow main;
+        public Login login;
+        public Profile profile;
+        public ActivityLog activity;
+        public Leaderboard leader;
+        //
+
+        SmartWatch sw;
+
+        ObservableCollection<CSVActivity> activityLog = new ObservableCollection<CSVActivity>();
         public Login()
         {
             InitializeComponent();
@@ -34,13 +45,43 @@ namespace FitnessTracker
         {
             main.Show();
             this.Hide();
-          
-                // check sql to see if it contains email and password given 
-                //string username = tbxUsername.Text;
-                //string password = tbxPassword.Password;
-                //SqlConnection connect = new SqlConnection();
-                //SqlCommand command = new SqlCommand();
-               
+
+            // check sql to see if it contains email and password given 
+            //string username = tbxUsername.Text;
+            //string password = tbxPassword.Password;
+            //SqlConnection connect = new SqlConnection();
+            //SqlCommand command = new SqlCommand();
+
+            if (tbxEmail.Text == "bradg@gmail.com")
+            {
+                profile = new Profile();
+
+                sw = new SmartWatch();
+
+                activity.Activities.ItemsSource = activityLog;
+
+                //getTopCalories();
+                //getTopDistance();
+                //getTopPerformers();
+            }
+            if (tbxEmail.Text == "danim@gmail.com")
+            {
+                profile = new Profile();
+
+                sw = new SmartWatch();
+
+                activity.Activities.ItemsSource = activityLog;
+            }
+           
+            else
+            {
+                profile = new Profile();
+
+                sw = new SmartWatch();
+
+                activity.Activities.ItemsSource = activityLog;
+            }
+
             
         }
         private void tbxEmail_TextChanged(object sender, TextChangedEventArgs e)

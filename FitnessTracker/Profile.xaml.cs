@@ -31,6 +31,10 @@ namespace FitnessTracker
             mainwindow = activityWindow;
         }
 
+        public Profile()
+        {
+        }
+
         private void Home_Click(object sender, RoutedEventArgs e)
         {
             mainwindow.Show();
