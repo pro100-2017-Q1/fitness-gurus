@@ -18,10 +18,9 @@ namespace FitnessTracker
         //
 
         SmartWatch sw;
-
+        
         ObservableCollection<CSVActivity> activityLog = new ObservableCollection<CSVActivity>();
-
-
+        
         public MainWindow(Login loginPage)
         {
             InitializeComponent();
@@ -31,10 +30,14 @@ namespace FitnessTracker
             sw = new SmartWatch();
 
             Activities.ItemsSource = activityLog;
+            calorieList.ItemsSource = leaderboardCalsList;
+            distanceList.ItemsSource = leaderboardDistList;
+            performersList.ItemsSource = leaderboardPerfList;
 
-            getTopCalories();
-            getTopDistance();
-            getTopPerformers();
+
+            //getTopCalories();
+            //getTopDistance();
+            //getTopPerformers();
         }
 
         private async void Import_Click(object sender, RoutedEventArgs e)
@@ -71,7 +74,7 @@ namespace FitnessTracker
         }
         public async Task<byte> GetActivities(string filename)
         {
-            int calories = 0; 
+            int calories = 0;
             int distance = 0;
             int.TryParse(profile.calorietbx.Text, out calories);
             int.TryParse(profile.distanceBox.Text, out distance);
@@ -82,7 +85,7 @@ namespace FitnessTracker
 
             using (StreamReader sr = new StreamReader(filename))
             {
-                while((input = await sr.ReadLineAsync()) != null)
+                while ((input = await sr.ReadLineAsync()) != null)
                 {
                     splitInfo = input.Split(',');
                     int cals = int.Parse(splitInfo[1]);
@@ -97,19 +100,47 @@ namespace FitnessTracker
             file.WriteLine(calories);
             file.WriteLine(distance);
             file.Close();
-            file2.WriteLine(profile.username + ":");
-            file2.WriteLine(calories);
+            file2.Write(profile.username + ", ");
+            file2.Write(calories + ", ");
             file2.WriteLine(distance);
             file2.Close();
             profile.calorietbx.Text = calories.ToString();
             profile.distanceBox.Text = distance.ToString();
 
+            await UpdateLeaderboard();
+
+            return 0;
+        }
+
+        private async Task<byte> UpdateLeaderboard()
+        {
+            //calorieList.Items.Clear();
+            //distanceList.Items.Clear();
+            //performersList.Items.Clear();
+
+            //using (StreamReader leaderboardFile = new StreamReader(Directory.GetCurrentDirectory() + "leaderboard.txt"))
+            //{
+
+            //    while (!leaderboardFile.EndOfStream)
+            //    {
+            //        string temp = await leaderboardFile.ReadLineAsync();
+            //        string[] words = temp.Split(',');
+            //        int cals = 0;
+            //        int dist = 0;
+            //        int.TryParse(words[1], out cals);
+            //        int.TryParse(words[2], out dist);
+            //        LeaderboardEntry le = new LeaderboardEntry(words[0], cals, dist);
+            //        leaderboardCalsList.Add(le);
+            //        leaderboardDistList.Add(le);
+            //        leaderboardPerfList.Add(le);
+            //    }
+            //}
             return 0;
         }
 
         private void dot1_Checked(object sender, RoutedEventArgs e)
         {
-            
+
             ActivityLog.Visibility = Visibility.Visible;
             Leaderboard.Visibility = Visibility.Hidden;
 
@@ -132,7 +163,7 @@ namespace FitnessTracker
         }
         public void getTopPerformers()
         {
-            performersList.Items.Add("Mary");
+            performersList.Items.Add("Kate");
         }
 
         private void LogOut_Click(object sender, RoutedEventArgs e)
@@ -142,6 +173,37 @@ namespace FitnessTracker
             login.LogOut();
             login.Show();
         }
+
+        ObservableCollection<LeaderboardEntry> leaderboardCalsList = new ObservableCollection<LeaderboardEntry> {
+            new LeaderboardEntry("greeninja13", 10308, 126),
+            new LeaderboardEntry("sonic the hedgehog", 8094, 92),
+            new LeaderboardEntry("blorq", 7180, 97)
+        };
+        ObservableCollection<LeaderboardEntry> leaderboardDistList = new ObservableCollection<LeaderboardEntry> {
+            new LeaderboardEntry("greeninja13", 10308, 126),
+            new LeaderboardEntry("blorq", 7180, 97),
+            new LeaderboardEntry("sonic the hedgehog", 8094, 92)
+        };
+        ObservableCollection<LeaderboardEntry> leaderboardPerfList = new ObservableCollection<LeaderboardEntry> {
+            new LeaderboardEntry("greeninja13", 10308, 126),
+            new LeaderboardEntry("sonic the hedgehog", 8094, 92),
+            new LeaderboardEntry("blorq", 7180, 97)
+        };
     }
 
+    public class LeaderboardEntry {
+
+        public string Username { get; set; }
+        public int Calories { get; set; }
+        public int Distance { get; set; }
+        public int Points { get; set; }
+
+        public LeaderboardEntry(string usr, int cals, int dist)
+        {
+            Username = usr;
+            Calories = cals;
+            Distance = dist;
+            Points = cals + dist;
+        }
+    }
 }
